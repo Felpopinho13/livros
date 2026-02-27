@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Trocas</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<section class="admin-page">
+
+    <!-- MENU LATERAL -->
+    <aside class="admin-menu">
+        <h3>Painel Admin</h3>
+        <ul>
+            <li><a href="admin-dashboard.html">Dashboard</a></li>
+            <li><a href="admin-produtos.html">Produtos</a></li>
+            <li><a href="admin-estoque.html">Estoque</a></li>
+            <li><a href="admin-pedidos.html">Pedidos</a></li>
+            <li><a href="admin-clientes.html">Clientes</a></li>
+            <li><a href="admin-trocas.html" class="active">Trocas</a></li>
+            <li><a href="../index.html">Voltar à Loja</a></li>
+        </ul>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <div class="admin-content">
+
+        <h2>Gerenciar Solicitações de Troca</h2>
+
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Cliente</th>
+                    <th>Livro</th>
+                    <th>Motivo</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>TR001</td>
+                    <td>João Silva</td>
+                    <td>Livro Exemplo</td>
+                    <td>Produto com defeito</td>
+                    <td><span class="status pendente">Pendente</span></td>
+                    <td>
+                        <button class="btn-aprovar">Aprovar</button>
+                        <button class="btn-recusar">Recusar</button>
+                        <button class="btn-concluir">Concluir</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>TR002</td>
+                    <td>Maria Souza</td>
+                    <td>Livro Y</td>
+                    <td>Recebi item errado</td>
+                    <td><span class="status aprovada">Aprovada</span></td>
+                    <td>
+                        <button class="btn-concluir">Concluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</section>
+
+</html>

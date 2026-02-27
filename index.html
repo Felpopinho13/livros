@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BookStore</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">BookStore</div>
+
+            <form class="search-box" action="resultados-busca.html" method="GET">
+                <input type="text" name="q" placeholder="Buscar livros..." class="input">
+                <button type="submit">🔍</button>
+            </form>
+
+            <nav class="nav-icons">
+                <a href="index.html">🏠</a>
+                <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+                <a href="area-cliente.html">👤</a>
+                <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="container">
+            <h1>Descubra sua próxima leitura</h1>
+            <p>Os melhores livros com os melhores preços</p>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="container">
+            <h2>Destaques</h2>
+
+            <div class="product-grid">
+
+                <div class="card product-card">
+                    <img src="assets/img/1984.jpg" alt="Livro">
+                    <a href="livro-detalhe.html">
+                        <h3>1984</h3>
+                    </a>
+                    <p class="price">R$ 59,90</p>
+                    <a href="checkout.html" class="btn btn-primary btn-block">
+                        Adicionar
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 BookStore - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+
+</html>

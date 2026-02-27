@@ -1,0 +1,26 @@
+.checkout-page {
+    padding: 50px 20px;
+}
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.checkout-card {
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.checkout-summary {
+    padding: 25px;
+    height: fit-content;
+}
+
+.total-price {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}

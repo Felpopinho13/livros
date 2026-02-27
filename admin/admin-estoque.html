@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<section class="admin-page">
+
+    <!-- MENU LATERAL -->
+    <aside class="admin-menu">
+        <ul>
+            <li><a href="admin-dashboard.html">Dashboard</a></li>
+            <li><a href="admin-livros.html">Livros</a></li>
+            <li><a href="admin-clientes.html">Clientes</a></li>
+            <li><a href="admin-pedidos.html">Pedidos</a></li>
+            <li><a href="admin-estoque.html">Estoque</a></li>
+            <li><a href="admin-trocas.html">Trocas</a></li>
+            <li><a href="../index.html">Voltar à Loja</a></li>
+        </ul>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <div class="admin-content">
+
+        <h2>Controle de Estoque</h2>
+
+        <div class="admin-card">
+            <h3>Entrada de Estoque</h3>
+
+            <form class="form-account">
+                <input type="text" placeholder="Livro" required>
+                <input type="number" placeholder="Quantidade" required>
+                <input type="number" placeholder="Custo" required>
+
+                <button type="submit" class="btn-primary">
+                    Registrar Entrada
+                </button>
+            </form>
+        </div>
+
+        <h3 style="margin-top: 30px;">Estoque Atual</h3>
+
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>Livro</th>
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Livro Exemplo</td>
+                    <td>20</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</section>
+
+</body>
+</html>

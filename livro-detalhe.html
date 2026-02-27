@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Livro</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">📚 BookStore</div>
+            <div class="search-box">
+                <input type="text" placeholder="Buscar livros...">
+                <button>🔍</button>
+            </div>
+            <nav class="nav-icons">
+                <a href="index.html">🏠</a>
+                <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+                <a href="area-cliente.html">👤</a>
+                <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="book-detail">
+        <div class="container book-detail-grid">
+
+            <!-- IMAGEM -->
+            <div class="book-gallery">
+                <img src="assets/img/1984.jpg" alt="1984">
+            </div>
+
+            <!-- INFORMAÇÕES -->
+            <div class="book-info">
+                <h1>1984</h1>
+                <p class="author">por George Orwell</p>
+
+                <p class="description">
+                    Um clássico da literatura distópica que retrata um regime totalitário...
+                </p>
+            </div>
+
+            <!-- BOX DE COMPRA -->
+            <div class="book-buy-box">
+                <p class="price">R$ 79,90</p>
+                <p class="stock">Em estoque</p>
+
+                <input type="number" value="1" min="1" class="input">
+
+                <button class="btn btn-primary btn-block">
+                    Adicionar ao carrinho
+                </button>
+
+                <button class="btn btn-block" style="background:#ffa41c">
+                    Comprar agora
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 BookStore - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="assets/js/cart.js"></script>
+</body>
+
+</html>

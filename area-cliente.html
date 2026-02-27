@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BookStore</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">BookStore</div>
+
+        <form class="search-box" action="resultados-busca.html" method="GET">
+            <input type="text" name="q" placeholder="Buscar livros..." class="input">
+            <button type="submit">🔍</button>
+        </form>
+
+        <nav class="nav-icons">
+            <a href="index.html">🏠</a>
+            <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+            <a href="area-cliente.html">👤</a>
+            <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
+        </nav>
+    </div>
+</header>
+<section class="account-page">
+    <div class="container account-layout">
+
+        <aside class="account-menu">
+            <h3>Minha Conta</h3>
+            <ul>
+                <li><a href="meus-pedidos.html" class="active">Meus pedidos</a></li>
+                <li><a href="editar-cliente.html">Meus dados</a></li>
+                <li><a href="enderecos-cliente.html">Endereços</a></li>
+                <li><a href="cartoes-cliente.html">Cartões</a></li>
+                <li><a href="solicitar-troca.html">Trocas</a></li>
+            </ul>
+        </aside>
+
+        <div class="account-content card">
+            <div class="account-inner">
+                <h2>Bem-vindo, Felipe 👋</h2>
+                <p><strong>Pedidos realizados:</strong> 3</p>
+                <p><strong>Último pedido:</strong> #123456</p>
+            </div>
+        </div>
+    </div>
+</section>

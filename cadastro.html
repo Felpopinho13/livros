@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Alterar Senha</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<section class="auth-page">
+
+    <div class="auth-box">
+
+        <h2>Criar Conta</h2>
+
+        <form action="area-cliente.html" method="POST" id="formCadastro">
+
+            <input 
+                type="text" 
+                name="nome" 
+                placeholder="Nome completo" 
+                required>
+
+            <input 
+                type="text" 
+                name="cpf" 
+                placeholder="CPF" 
+                maxlength="14"
+                required>
+
+            <input 
+                type="date" 
+                name="dataNascimento" 
+                required>
+
+            <select name="genero">
+                <option value="">Selecione o gênero</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="outro">Outro</option>
+            </select>
+
+            <input 
+                type="tel" 
+                name="telefone" 
+                placeholder="Telefone">
+
+            <input 
+                type="email" 
+                name="email" 
+                placeholder="Email" 
+                required>
+
+            <input 
+                type="password" 
+                name="senha" 
+                id="senha"
+                placeholder="Senha" 
+                required>
+
+            <input 
+                type="password" 
+                name="confirmarSenha" 
+                id="confirmarSenha"
+                placeholder="Confirmar senha" 
+                required>
+
+            <button type="submit" class="btn-primary">
+                Cadastrar
+            </button>
+
+        </form>
+
+        <p>
+            Já possui conta? 
+            <a href="login.html">Entrar</a>
+        </p>
+
+    </div>
+
+</section>

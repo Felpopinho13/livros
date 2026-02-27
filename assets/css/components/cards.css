@@ -1,0 +1,62 @@
+/* =========================
+   CARD BASE
+========================= */
+
+.card {
+    background: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card {
+    text-align: center;
+    transition: 0.3s;
+    padding: 15px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+.product-card h3 {
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.product-card .price {
+    margin: 10px 0;
+}
+
+/* =========================
+   CART ITEM
+========================= */
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.cart-item img {
+    border-radius: var(--radius-sm);
+}
+
+/* =========================
+   ADMIN CARD
+========================= */
+
+.admin-card {
+    padding: var(--spacing-md);
+}

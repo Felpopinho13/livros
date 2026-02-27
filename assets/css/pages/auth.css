@@ -1,0 +1,24 @@
+/* =========================
+   AUTH PAGES (LOGIN / CADASTRO)
+========================= */
+
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-box {
+    background: var(--color-white);
+    padding: 50px 45px;
+    width: 100%;
+    max-width: 450px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}

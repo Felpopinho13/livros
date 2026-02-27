@@ -1,0 +1,78 @@
+/* =========================
+   ACCOUNT PAGE
+========================= */
+
+.account-page {
+    padding: 60px 0;
+}
+
+.account-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+}
+
+.account-menu {
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    background: var(--color-white);
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    margin-left: 15px;
+}
+
+.account-menu.collapsed {
+    width: 60px;
+}
+
+.account-content {
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    background: var(--color-white);
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    margin-right: 15px;
+}
+
+.account-menu h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.account-menu ul {
+    list-style: none;
+}
+
+.account-menu li {
+    margin-bottom: 12px;
+}
+
+.account-menu a {
+    display: block;
+    padding: 12px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+.account-menu a:hover {
+    background: #232f3e; /* azul escuro */
+    color: white;
+    border-color: #232f3e;
+}
+
+/* Item ativo */
+.account-menu a.active {
+    background: #ffa41c; /* laranja da sua paleta */
+    color: white;
+    border-color: #ffa41c;
+}
+
+.account-inner {
+    max-width: 650px;
+    margin: 40px auto;
+}

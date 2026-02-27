@@ -1,0 +1,62 @@
+/* =========================
+   BOTÃO BASE
+========================= */
+
+.btn {
+    background-color: #ffd814;
+    border: 1px solid #fcd200;
+    color: #0f1111;
+    padding: 10px;
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 2px 0;
+    transition: background 0.2s;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* =========================
+   VARIAÇÕES
+========================= */
+
+.btn:hover {
+    background-color: #f7ca00;
+}
+
+.btn-primary {
+    background-color: #ffa41c;
+    border-color: #ff9900;
+}
+
+.btn-secondary {
+    background-color: #e7e9ec;
+    border: 1px solid #d5d9d9;
+    color: #0f1111;
+}
+
+.btn-secondary:hover {
+    background-color: #d5d9d9;
+}
+
+.btn-success {
+    background: var(--color-success);
+    color: var(--color-white);
+}
+
+.btn-danger {
+    background: var(--color-danger);
+    color: var(--color-white);
+}
+
+/* Botões pequenos */
+.btn-sm {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+/* Botão full width */
+.btn-block {
+    width: 100%;
+}
