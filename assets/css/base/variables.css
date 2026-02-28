@@ -27,4 +27,12 @@
     --spacing-sm: 10px;
     --spacing-md: 20px;
     --spacing-lg: 40px;
+
+    --amazon-blue:    #0066c0;
+    --price-red:      #b12704;
+    --delivered-green:#007600;
+    --border-gray:    #d5d9d9;
+    --text-dark:      #0f1111;
+    --text-muted:     #555;
+    --bg-light:       #f3f3f3;
 }

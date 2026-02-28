@@ -1,28 +1,52 @@
-<section class="account-page">
-    <head>
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    <aside class="account-menu">
-        <ul>
-            <li><a href="editar-cliente.html">Dados Pessoais</a></li>
-            <li><a href="enderecos-cliente.html">Endereços</a></li>
-            <li><a href="cartoes-cliente.html">Cartões</a></li>
-            <li><a href="alterar-senha.html">Alterar Senha</a></li>
-            <li><a href="meus-pedidos.html">Meus Pedidos</a></li>
-            <li><a href="index.html">Voltar à Loja</a></li>
-        </ul>
-    </aside>
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Livro</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
 
-    <div class="account-content">
-        <h2>Editar Dados</h2>
-
-        <form class="form-account">
-            <input type="text" value="Felipi Pereira">
-            <input type="email" value="felipi@email.com">
-            <input type="tel" value="11999999999">
-            <button type="submit" class="btn-primary">Salvar Alterações</button>
-        </form>
-    </div>
-
-</section>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">BookStore</div>
+            <div class="search-box">
+                <input type="text" placeholder="Buscar livros...">
+                <button>🔍</button>
+            </div>
+            <nav class="nav-icons">
+                <a href="index.html">🏠</a>
+                <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+                <a href="area-cliente.html">👤</a>
+                <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
+            </nav>
+        </div>
+    </header>
+    <section class="edit-profile-page">
+        <div class="edit-profile-container">
+            <h2>Editar Dados</h2>
+            <form class="edit-profile-form">
+                <div class="form-group">
+                    <label>Nome completo</label>
+                    <input type="text" value="Felipi Pereira">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" value="felipi@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Telefone</label>
+                    <input type="tel" value="11999999999">
+                </div>
+                <div class="form-group">
+                    <label>CPF</label>
+                    <input type="text" value="000.000.000-00">
+                </div>
+                <button type="submit" class="btn-primary btn-profile">
+                    Salvar Alterações
+                </button>
+            </form>
+        </div>
+    </section>
+</body>

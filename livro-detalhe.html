@@ -6,25 +6,23 @@
     <title>Detalhes do Livro</title>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
+<header class="header">
+    <div class="container">
+        <div class="logo">BookStore</div>
+        <div class="search-box">
+            <input type="text" placeholder="Buscar livros...">
+            <button>🔍</button>
+        </div>
+        <nav class="nav-icons">
+            <a href="index.html">🏠</a>
+            <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+            <a href="area-cliente.html">👤</a>
+            <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
+        </nav>
+    </div>
+</header>
 
 <body>
-
-    <header class="header">
-        <div class="container">
-            <div class="logo">📚 BookStore</div>
-            <div class="search-box">
-                <input type="text" placeholder="Buscar livros...">
-                <button>🔍</button>
-            </div>
-            <nav class="nav-icons">
-                <a href="index.html">🏠</a>
-                <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
-                <a href="area-cliente.html">👤</a>
-                <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
-            </nav>
-        </div>
-    </header>
-
     <section class="book-detail">
         <div class="container book-detail-grid">
 
@@ -54,9 +52,9 @@
                     Adicionar ao carrinho
                 </button>
 
-                <button class="btn btn-block" style="background:#ffa41c">
+                <a href="checkout.html" class="btn btn-block" style="background:#ffa41c">
                     Comprar agora
-                </button>
+                </a>
             </div>
 
         </div>

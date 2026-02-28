@@ -60,3 +60,13 @@
 .admin-card {
     padding: var(--spacing-md);
 }
+
+/* Caixa estilo Amazon (reutilizável) */
+.a-box {
+    background: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}

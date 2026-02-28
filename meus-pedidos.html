@@ -1,41 +1,77 @@
-<div class="account-page">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Menu lateral -->
-    <aside class="account-menu" id="sidebar">
-        <ul>
-            <li><a href="editar-cliente.html">Dados Pessoais</a></li>
-            <li><a href="enderecos-cliente.html">Endereços</a></li>
-            <li><a href="cartoes-cliente.html">Cartões</a></li>
-            <li><a href="alterar-senha.html">Alterar Senha</a></li>
-            <li><a href="meus-pedidos.html" class="active">Meus Pedidos</a></li>
-            <li><a href="index.html">Voltar à Loja</a></li>
-        </ul>
-    </aside>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    <!-- Conteúdo principal -->
-    <section class="account-content">
-        <h2>Meus Pedidos</h2>
+<head>
+    <meta charset="UTF-8">
+    <title>BookStore</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<header class="header">
+    <div class="container">
+        <div class="logo">BookStore</div>
 
-        <table class="orders-table">
-            <thead>
-                <tr>
-                    <th>Nº Pedido</th>
-                    <th>Data</th>
-                    <th>Status</th>
-                    <th>Valor</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>#123456</td>
-                    <td>23/02/2026</td>
-                    <td><span class="status processing">Em Processamento</span></td>
-                    <td>R$ 74,90</td>
-                    <td><a href="pedido-detalhe.html">Ver</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-</div>
+        <form class="search-box" action="resultados-busca.html" method="GET">
+            <input type="text" name="q" placeholder="Buscar livros..." class="input">
+            <button type="submit">🔍</button>
+        </form>
 
+        <nav class="nav-icons">
+            <a href="index.html">🏠</a>
+            <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+            <a href="area-cliente.html">👤</a>
+            <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
+        </nav>
+    </div>
+</header>
+<section class="orders-page">
+    <div class="container">
+
+        <h2>Seus pedidos</h2>
+
+        <div class="order-card card">
+
+            <div class="order-header">
+                <div>
+                    <span class="label">Pedido realizado</span>
+                    <strong>25 de fevereiro de 2026</strong>
+                </div>
+
+                <div>
+                    <span class="label">Total</span>
+                    <strong>R$ 74,90</strong>
+                </div>
+
+                <div>
+                    <span class="label">Pedido nº</span>
+                    <strong>#123456</strong>
+                </div>
+            </div>
+
+            <div class="order-body">
+
+                <img src="assets/img/1984.jpg" alt="Livro 1984">
+
+                <div class="order-info">
+                    <h3>1984 - George Orwell</h3>
+
+                    <p class="status processing">
+                        Em processamento
+                    </p>
+
+                    <div class="order-buttons">
+                        <a href="pedido-detalhe.html"
+                           class="btn btn-secondary">
+                            Ver detalhes
+                        </a>
+
+                        <a href="#"
+                           class="btn btn-primary">
+                            Comprar novamente
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
