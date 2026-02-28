@@ -1,28 +1,75 @@
-<div class="account-page">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- Menu lateral -->
-    <aside class="account-menu">
-        <ul>
-            <li><a href="editar-cliente.html">Dados Pessoais</a></li>
-            <li><a href="enderecos-cliente.html">Endereços</a></li>
-            <li><a href="cartoes-cliente.html">Cartões</a></li>
-            <li><a href="alterar-senha.html">Alterar Senha</a></li>
-            <li><a href="meus-pedidos.html">Meus Pedidos</a></li>
-            <li><a href="index.html">Voltar à Loja</a></li>
-        </ul>
-    </aside>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    <!-- Conteúdo principal -->
-    <div class="account-content">
-        <h2>Meus Cartões</h2>
+<head>
+    <meta charset="UTF-8">
+    <title>BookStore</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<header class="header">
+    <div class="container">
+        <div class="logo">BookStore</div>
 
-        <div class="card-box">
-            <p>Visa •••• 1234</p>
-            <button class="btn-secondary">Definir Preferencial</button>
-        </div>
+        <form class="search-box" action="resultados-busca.html" method="GET">
+            <input type="text" name="q" placeholder="Buscar livros..." class="input">
+            <button type="submit">🔍</button>
+        </form>
 
-        <a href="cartoes-cliente.html" class="btn-primary">
-            Adicionar Novo Cartão
-        </a>
+        <nav class="nav-icons">
+            <a href="index.html">🏠</a>
+            <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+            <a href="area-cliente.html">👤</a>
+            <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
+        </nav>
     </div>
-</div>
+</header>
+
+<body>
+    <section class="wallet-page">
+        <div class="wallet-container">
+            <!-- Header cartões -->
+            <div class="wallet-header">
+                <h2>Cartões</h2>
+                <button class="btn-primary">
+                    + Adicionar Cartão de Crédito
+                </button>
+            </div>
+
+            <!-- Grid cartões -->
+            <div class="wallet-grid">
+
+                <!-- Cartão padrão -->
+                <div class="wallet-card primary">
+                    <div class="wallet-card-top">
+                        <strong>Felipi Pereira</strong>
+                        <span class="badge">Padrão</span>
+                    </div>
+
+                    <p>**** **** **** 0607</p>
+                    <p>Vence em 12/2031</p>
+
+                    <div class="wallet-actions">
+                        <a href="#">Remover</a>
+                    </div>
+                </div>
+
+                <!-- Outro cartão -->
+                <div class="wallet-card">
+                    <div class="wallet-card-top">
+                        <strong>Felipi Pereira</strong>
+                    </div>
+
+                    <p>**** **** **** 9403</p>
+                    <p>Vence em 11/2028</p>
+
+                    <div class="wallet-actions">
+                        <a href="#">Remover</a>
+                        <a href="#" class="make-default">Tornar padrão</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

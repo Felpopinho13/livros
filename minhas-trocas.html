@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BookStore</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">BookStore</div>
+
+            <form class="search-box" action="resultados-busca.html" method="GET">
+                <input type="text" name="q" placeholder="Buscar livros..." class="input">
+                <button type="submit">🔍</button>
+            </form>
+
+            <nav class="nav-icons">
+                <a href="index.html">🏠</a>
+                <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+                <a href="area-cliente.html">👤</a>
+                <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
+            </nav>
+        </div>
+    </header>
+    <section class="my-exchanges-page">
+        <div class="my-exchanges-container">
+            <div class="breadcrumb">
+                Central Minha Conta / <strong>Minhas Trocas</strong>
+            </div>
+
+            <h2>Minhas Trocas</h2>
+            <div class="exchange-list">
+
+                <!-- TROCA EM ANÁLISE -->
+                <div class="exchange-card">
+
+                    <div class="exchange-info">
+                        <h4>Troca #001</h4>
+                        <p>Pedido #123456</p>
+                        <p>Livro: 1984 - George Orwell</p>
+                        <p>Status: <span class="status pending">EM TROCA</span></p>
+                    </div>
+
+                    <a href="detalhe-troca.html" class="btn-outline">Ver detalhes</a>
+
+                </div>
+
+                <!-- TROCA CONCLUÍDA -->
+                <div class="exchange-card completed">
+                    <div class="exchange-info">
+                        <h4>Troca #002</h4>
+                        <p>Pedido #123400</p>
+                        <p>Livro: O Hobbit</p>
+                        <p>Status: <span class="status success">TROCADO</span></p>
+
+                        <div class="coupon-box">
+                            <strong>Cupom gerado:</strong>
+                            <p>Código: TRC-0002</p>
+                            <p>Valor: R$ 59,90</p>
+                        </div>
+                    </div>
+                    <a href="carrinho.html" class="btn-primary">Usar Cupom</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

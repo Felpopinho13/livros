@@ -1,28 +1,67 @@
-<section class="exchange-page">
-    
-    <link rel="stylesheet" href="assets/css/style.css">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    <h2>Solicitar Troca</h2>
+<head>
+    <meta charset="UTF-8">
+    <title>BookStore</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
 
-    <form action="troca-sucesso.html" method="GET">
-        <div class="exchange-box">
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">BookStore</div>
 
-            <label>
-                <input type="checkbox" name="livro" value="Livro Exemplo">
-                Livro Exemplo
-            </label>
+            <form class="search-box" action="resultados-busca.html" method="GET">
+                <input type="text" name="q" placeholder="Buscar livros..." class="input">
+                <button type="submit">🔍</button>
+            </form>
 
-            <textarea 
-                name="motivo" 
-                placeholder="Motivo da troca" 
-                required>
-            </textarea>
-
-            <button type="submit" class="btn-primary">
-                Enviar Solicitação
-            </button>
-
+            <nav class="nav-icons">
+                <a href="index.html">🏠</a>
+                <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+                <a href="area-cliente.html">👤</a>
+                <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
+            </nav>
         </div>
-    </form>
+    </header>
+    <section class="exchange-page">
 
-</section>
+        <div class="exchange-container">
+            <h2>Solicitar Troca</h2>
+            <form action="troca-sucesso.html" method="GET" class="exchange-form">
+                <!-- Produto -->
+                <div class="exchange-product">
+                    <label class="product-select">
+                        <input type="checkbox" name="livro" value="Livro Exemplo">
+
+                        <div class="product-info">
+                            <img src="assets/img/1984.jpg" alt="1984">
+                            <div>
+                                <h4>1984 - George Orwell</h4>
+                                <p>Quantidade: 1</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <!-- Motivo -->
+                <div class="exchange-field">
+                    <label>Motivo da troca</label>
+                    <textarea name="motivo" placeholder="Descreva o motivo da troca..." required>
+                </textarea>
+                </div>
+
+                <!-- Botão -->
+                <div class="exchange-actions">
+                    <button type="submit" class="btn-primary">
+                        Enviar Solicitação
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,29 +1,82 @@
-<div class="account-page">
-    <!-- Menu lateral -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <aside class="account-menu">
-        <ul>
-            <li><a href="editar-cliente.html">Dados Pessoais</a></li>
-            <li><a href="enderecos-cliente.html">Endereços</a></li>
-            <li><a href="cartoes-cliente.html">Cartões</a></li>
-            <li><a href="alterar-senha.html">Alterar Senha</a></li>
-            <li><a href="meus-pedidos.html">Meus Pedidos</a></li>
-            <li><a href="index.html">Voltar à Loja</a></li>
-        </ul>
-    </aside>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    <!-- Conteúdo principal -->
-    <div class="account-content">
-        <h2>Meus Endereços</h2>
+<head>
+    <meta charset="UTF-8">
+    <title>BookStore</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<header class="header">
+    <div class="container">
+        <div class="logo">BookStore</div>
 
-        <div class="address-card">
-            <p>Rua Exemplo, 123</p>
-            <p>Itaquaquecetuba - SP</p>
-            <button class="btn-secondary">Editar</button>
-        </div>
+        <form class="search-box" action="resultados-busca.html" method="GET">
+            <input type="text" name="q" placeholder="Buscar livros..." class="input">
+            <button type="submit">🔍</button>
+        </form>
 
-        <a href="enderecos-cliente.html" class="btn-primary">
-            Adicionar Novo Endereço
-        </a>
+        <nav class="nav-icons">
+            <a href="index.html">🏠</a>
+            <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+            <a href="area-cliente.html">👤</a>
+            <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
+        </nav>
     </div>
-</div>
+</header>
+
+<body>
+    <section class="address-page">
+
+        <div class="address-container">
+
+            <div class="breadcrumb">
+                Central Minha Conta / <strong>Endereços</strong>
+            </div>
+
+            <div class="address-header">
+                <h2>Endereços</h2>
+
+                <button class="btn-primary">
+                    + Cadastrar Novo Endereço
+                </button>
+            </div>
+
+            <div class="address-grid">
+
+                <!-- CARD PADRÃO -->
+                <div class="address-card primary">
+                    <div class="address-top">
+                        <h4>Felipi Pereira</h4>
+                        <span class="badge">Padrão</span>
+                    </div>
+
+                    <p>Rua Exemplo, 123</p>
+                    <p>Itaquaquecetuba - SP</p>
+                    <p>CEP: 08500-000</p>
+
+                    <div class="address-actions">
+                        <a href="#">Excluir</a>
+                        <a href="editar-endereco.html">Editar</a>
+                    </div>
+                </div>
+
+                <!-- OUTRO CARD -->
+                <div class="address-card">
+                    <h4>Casa</h4>
+                    <p>Av. Paulista, 1000</p>
+                    <p>São Paulo - SP</p>
+                    <p>CEP: 01310-000</p>
+
+                    <div class="address-actions">
+                        <a href="#">Excluir</a>
+                        <a href="editar-endereco.html">Editar</a>
+                        <a href="#" class="make-default">Tornar padrão</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
