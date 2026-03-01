@@ -1,54 +1,118 @@
-<section class="admin-page">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    <!-- MENU LATERAL -->
-    <aside class="admin-menu">
-        <ul>
-            <li><a href="admin-dashboard.html">Dashboard</a></li>
-            <li><a href="admin-livros.html">Livros</a></li>
-            <li><a href="admin-clientes.html">Clientes</a></li>
-            <li><a href="admin-pedidos.html">Pedidos</a></li>
-            <li><a href="admin-estoque.html">Estoque</a></li>
-            <li><a href="admin-trocas.html">Trocas</a></li>
-            <li><a href="../index.html">Voltar à Loja</a></li>
-        </ul>
-    </aside>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/admin/admin-layout.css">
+</head>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <div class="admin-content">
-        
-        <link rel="stylesheet" href="../assets/css/style.css">
+<body class="admin-body">
 
-        <h2>Gerenciar Livros</h2>
+    <div class="admin-layout">
 
-        <div class="admin-livros-content">
-            <a href="admin-livro-form.html" class="btn-primary">
-                Cadastrar Novo Livro
-            </a>
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>Painel Admin</h2>
+            </div>
+
+            <nav class="admin-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="admin-clientes.html">Clientes</a>
+                <a href="admin-livros.html">Livros</a>
+                <a href="admin-estoque.html">Estoque</a>
+                <a href="admin-pedidos.html">Pedidos</a>
+                <a href="admin-trocas.html">Trocas</a>
+                <a href="analise-vendas.html">Análise de Vendas</a>
+            </nav>
+
+            <div class="admin-back-store">
+                <a href="../index.html">← Voltar para Loja</a>
+            </div>
+        </aside>
+
+        <!-- ÁREA PRINCIPAL -->
+        <div class="admin-main">
+
+            <!-- HEADER -->
+            <header class="admin-header">
+                <h1>Livros</h1>
+                <div class="admin-user">
+                    <span>Administrador</span>
+                </div>
+            </header>
+
+            <!-- CONTEÚDO -->
+            <section class="admin-content">
+                <div class="admin-page-header">
+                    <h2>Livros</h2>
+                    <button class="btn-primary">+ Novo Livro</button>
+                </div>
+
+                <div class="admin-filters">
+                    <input type="text" placeholder="Buscar livro..." class="admin-input">
+                    <select class="admin-select">
+                        <option>Todas Categorias</option>
+                        <option>Ficção</option>
+                        <option>Tecnologia</option>
+                        <option>Negócios</option>
+                    </select>
+                </div>
+
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Livro</th>
+                                <th>Categoria</th>
+                                <th>Preço</th>
+                                <th>Estoque</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10</td>
+                                <td>Clean Code</td>
+                                <td>Tecnologia</td>
+                                <td>R$ 129,90</td>
+                                <td>32</td>
+                                <td><span class="status success">Ativo</span></td>
+                                <td class="admin-actions">
+                                    <button class="btn-link">Editar</button>
+                                    <button class="btn-danger">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Mindset</td>
+                                <td>Negócios</td>
+                                <td>R$ 79,90</td>
+                                <td>0</td>
+                                <td><span class="status danger">Sem Estoque</span></td>
+                                <td class="admin-actions">
+                                    <button class="btn-link">Editar</button>
+                                    <button class="btn-danger">Excluir</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="admin-pagination">
+                        <button class="page-btn">Anterior</button>
+                        <button class="page-number active">1</button>
+                        <button class="page-number">2</button>
+                        <button class="page-btn">Próximo</button>
+                    </div>
+                </div>
+            </section>
+
         </div>
-            
-        <table class="orders-table">
-            <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Título</th>
-                    <th>Autor</th>
-                    <th>Preço</th>
-                    <th>Estoque</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>001</td>
-                    <td>Livro Exemplo</td>
-                    <td>Autor X</td>
-                    <td>R$ 59,90</td>
-                    <td>20</td>
-                    <td>Ativo</td>
-                </tr>
-            </tbody>
-        </table>
 
     </div>
 
-</section>
+</body>

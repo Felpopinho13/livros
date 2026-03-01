@@ -1,38 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/admin/admin-layout.css">
 </head>
-<body>
 
-<section class="admin-page">
+<body class="admin-body">
 
-    <aside class="admin-menu">
-        <ul>
-            <li><a href="admin-dashboard.html">Dashboard</a></li>
-            <li><a href="admin-livros.html">Livros</a></li>
-            <li><a href="admin-clientes.html">Clientes</a></li>
-            <li><a href="admin-pedidos.html">Pedidos</a></li>
-            <li><a href="admin-estoque.html">Estoque</a></li>
-            <li><a href="admin-trocas.html">Trocas</a></li>
-            <li><a href="../index.html">Voltar à Loja</a></li>
-        </ul>
-    </aside>
+    <div class="admin-layout">
 
-    <div class="admin-content">
-        <h2>Painel Administrativo</h2>
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>Painel Admin</h2>
+            </div>
 
-        <div class="admin-cards">
-            <div class="admin-card">Vendas Hoje: R$ 1.250</div>
-            <div class="admin-card">Pedidos em Processamento: 8</div>
-            <div class="admin-card">Trocas Pendentes: 2</div>
-            <div class="admin-card">Estoque Baixo: 5</div>
+            <nav class="admin-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="admin-clientes.html">Clientes</a>
+                <a href="admin-livros.html">Livros</a>
+                <a href="admin-estoque.html">Estoque</a>
+                <a href="admin-pedidos.html">Pedidos</a>
+                <a href="admin-trocas.html">Trocas</a>
+                <a href="analise-vendas.html">Análise de Vendas</a>
+            </nav>
+
+            <div class="admin-back-store">
+                <a href="../index.html">← Voltar para Loja</a>
+            </div>
+        </aside>
+
+        <!-- ÁREA PRINCIPAL -->
+        <div class="admin-main">
+
+            <!-- HEADER -->
+            <header class="admin-header">
+                <h1>Dashboard</h1>
+                <div class="admin-user">
+                    <span>Administrador</span>
+                </div>
+            </header>
+
+            <!-- CONTEÚDO -->
+            <section class="admin-content">
+                <div class="admin-container">
+
+                    <div class="dashboard-cards">
+
+                        <div class="dashboard-card">
+                            <h3>Total de Pedidos</h3>
+                            <p class="card-number">1.245</p>
+                            <span class="card-info">+12% este mês</span>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <h3>Faturamento do Mês</h3>
+                            <p class="card-number">R$ 48.320</p>
+                            <span class="card-info">+8% este mês</span>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <h3>Clientes Ativos</h3>
+                            <p class="card-number">532</p>
+                            <span class="card-info">+3% este mês</span>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <h3>Trocas Pendentes</h3>
+                            <p class="card-number">18</p>
+                            <span class="card-info warning">Atenção necessária</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-row">
+
+                        <div class="dashboard-box">
+                            <h3>Últimos Pedidos</h3>
+
+                            <table class="dashboard-table">
+                                <thead>
+                                    <tr>
+                                        <th>#Pedido</th>
+                                        <th>Cliente</th>
+                                        <th>Status</th>
+                                        <th>Valor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#10234</td>
+                                        <td>Maria Silva</td>
+                                        <td><span class="status success">Pago</span></td>
+                                        <td>R$ 189,90</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#10235</td>
+                                        <td>João Lima</td>
+                                        <td><span class="status pending">Pendente</span></td>
+                                        <td>R$ 79,90</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#10236</td>
+                                        <td>Ana Costa</td>
+                                        <td><span class="status danger">Cancelado</span></td>
+                                        <td>R$ 120,00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
         </div>
+
     </div>
 
-</section>
-
 </body>
+
 </html>

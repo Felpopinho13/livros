@@ -1,42 +1,129 @@
-<section class="admin-page">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <aside class="admin-menu">
-        <ul>
-            <li><a href="admin-dashboard.html">Dashboard</a></li>
-            <li><a href="admin-livros.html">Livros</a></li>
-            <li><a href="admin-clientes.html">Clientes</a></li>
-            <li><a href="admin-pedidos.html">Pedidos</a></li>
-            <li><a href="admin-estoque.html">Estoque</a></li>
-            <li><a href="admin-trocas.html">Trocas</a></li>
-            <li><a href="../index.html">Voltar à Loja</a></li>
-        </ul>
-    </aside>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    <div class="admin-content">
-        <h2>Gerenciar Pedidos</h2>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/admin/admin-layout.css">
+</head>
 
-        <table class="orders-table">
-            <thead>
-                <tr>
-                    <th>Nº Pedido</th>
-                    <th>Cliente</th>
-                    <th>Status</th>
-                    <th>Valor</th>
-                    <th>Ação</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>#123456</td>
-                    <td>Felipi</td>
-                    <td>Em Processamento</td>
-                    <td>R$ 74,90</td>
-                    <td>
-                        <button class="btn-secondary">Despachar</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+<body class="admin-body">
+
+    <div class="admin-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>Painel Admin</h2>
+            </div>
+
+            <nav class="admin-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="admin-clientes.html">Clientes</a>
+                <a href="admin-livros.html">Livros</a>
+                <a href="admin-estoque.html">Estoque</a>
+                <a href="admin-pedidos.html">Pedidos</a>
+                <a href="admin-trocas.html">Trocas</a>
+                <a href="analise-vendas.html">Análise de Vendas</a>
+            </nav>
+
+            <div class="admin-back-store">
+                <a href="../index.html">← Voltar para Loja</a>
+            </div>
+        </aside>
+
+        <!-- ÁREA PRINCIPAL -->
+        <div class="admin-main">
+
+            <!-- HEADER -->
+            <header class="admin-header">
+                <h1>Pedidos</h1>
+                <div class="admin-user">
+                    <span>Administrador</span>
+                </div>
+            </header>
+
+            <!-- CONTEÚDO -->
+            <section class="admin-content">
+                <div class="admin-page-header">
+                    <h2>Pedidos</h2>
+                </div>
+
+                <div class="admin-filters">
+                    <input type="text" placeholder="Buscar por cliente ou pedido..." class="admin-input">
+
+                    <select class="admin-select">
+                        <option>Todos Status</option>
+                        <option>Pago</option>
+                        <option>Enviado</option>
+                        <option>Entregue</option>
+                        <option>Cancelado</option>
+                    </select>
+
+                    <input type="date" class="admin-input">
+                </div>
+
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>#Pedido</th>
+                                <th>Cliente</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                                <th>Total</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>#10234</td>
+                                <td>Maria Silva</td>
+                                <td>25/02/2026</td>
+                                <td><span class="order-status paid">Pago</span></td>
+                                <td class="order-total">R$ 189,90</td>
+                                <td class="admin-actions">
+                                    <button class="btn-primary btn-sm">Detalhes</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#10235</td>
+                                <td>João Lima</td>
+                                <td>26/02/2026</td>
+                                <td><span class="order-status shipped">Enviado</span></td>
+                                <td class="order-total">R$ 79,90</td>
+                                <td class="admin-actions">
+                                    <button class="btn-primary btn-sm">Detalhes</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#10236</td>
+                                <td>Ana Costa</td>
+                                <td>26/02/2026</td>
+                                <td><span class="order-status canceled">Cancelado</span></td>
+                                <td class="order-total">R$ 120,00</td>
+                                <td class="admin-actions">
+                                    <button class="btn-primary btn-sm">Detalhes</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <div class="admin-pagination">
+                        <button class="page-btn">Anterior</button>
+                        <button class="page-number active">1</button>
+                        <button class="page-number">2</button>
+                        <button class="page-btn">Próximo</button>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
+</body>
 
-</section>
+</html>

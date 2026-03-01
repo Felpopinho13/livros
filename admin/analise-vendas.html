@@ -1,20 +1,179 @@
-<section class="admin-page">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    <aside class="admin-menu"></aside>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/admin/admin-layout.css">
+</head>
 
-    <div class="admin-content">
-        <h2>Análise de Vendas</h2>
+<body class="admin-body">
 
-        <div class="admin-card">
-            <h3>Vendas por Produto</h3>
-            <p>Livro Exemplo — 32 vendas</p>
-            <p>Outro Livro — 18 vendas</p>
-        </div>
+    <div class="admin-layout">
 
-        <div class="admin-card">
-            <h3>Resumo Geral</h3>
-            <p>Total no mês: R$ 12.450</p>
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>Painel Admin</h2>
+            </div>
+
+            <nav class="admin-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="admin-clientes.html">Clientes</a>
+                <a href="admin-livros.html">Livros</a>
+                <a href="admin-estoque.html">Estoque</a>
+                <a href="admin-pedidos.html">Pedidos</a>
+                <a href="admin-trocas.html">Trocas</a>
+                <a href="analise-vendas.html">Análise de Vendas</a>
+            </nav>
+
+            <div class="admin-back-store">
+                <a href="../index.html">← Voltar para Loja</a>
+            </div>
+        </aside>
+
+        <!-- ÁREA PRINCIPAL -->
+        <div class="admin-main">
+
+            <!-- HEADER -->
+            <header class="admin-header">
+                <h1>Análise de Vendas</h1>
+                <div class="admin-user">
+                    <span>Administrador</span>
+                </div>
+            </header>
+
+            <!-- CONTEÚDO -->
+            <section class="admin-content">
+                <div class="admin-page-header">
+                    <h2>Análise de Vendas</h2>
+                </div>
+
+                <div class="admin-filters">
+                    <input type="date" class="admin-input">
+                    <input type="date" class="admin-input">
+
+                    <select class="admin-select">
+                        <option>Últimos 7 dias</option>
+                        <option>Últimos 30 dias</option>
+                        <option>Este mês</option>
+                        <option>Este ano</option>
+                    </select>
+
+                    <button class="btn-primary btn-sm">Filtrar</button>
+                </div>
+
+                <!-- CARDS RESUMO -->
+                <div class="dashboard-cards">
+
+                    <div class="dashboard-card">
+                        <h3>Faturamento Total</h3>
+                        <p class="card-number">R$ 98.450</p>
+                        <span class="card-info">+15% vs período anterior</span>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Total de Pedidos</h3>
+                        <p class="card-number">1.842</p>
+                        <span class="card-info">+8% crescimento</span>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Ticket Médio</h3>
+                        <p class="card-number">R$ 53,44</p>
+                        <span class="card-info">Estável</span>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Livros Vendidos</h3>
+                        <p class="card-number">2.930</p>
+                        <span class="card-info">+5% aumento</span>
+                    </div>
+
+                </div>
+
+                <!-- ÁREA DO GRÁFICO -->
+                <div class="dashboard-row">
+
+                    <div class="dashboard-box">
+                        <h3>Faturamento por Mês</h3>
+
+                        <div class="dashboard-box">
+                            <h3>Faturamento por Mês</h3>
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- TABELA MAIS VENDIDOS -->
+                <div class="dashboard-box" style="margin-top: 30px;">
+                    <h3>Top 5 Livros Mais Vendidos</h3>
+
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Livro</th>
+                                <th>Categoria</th>
+                                <th>Vendas</th>
+                                <th>Faturamento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Clean Code</td>
+                                <td>Tecnologia</td>
+                                <td>320</td>
+                                <td>R$ 41.568</td>
+                            </tr>
+                            <tr>
+                                <td>Mindset</td>
+                                <td>Negócios</td>
+                                <td>280</td>
+                                <td>R$ 22.372</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('salesChart');
 
-</section>
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+                datasets: [{
+                    label: 'Faturamento (R$)',
+                    data: [12000, 19000, 15000, 22000, 18000, 25000],
+                    borderColor: '#ff9900',
+                    backgroundColor: 'rgba(255,153,0,0.1)',
+                    borderWidth: 3,
+                    tension: 0.3,
+                    fill: true,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#ff9900'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

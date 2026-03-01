@@ -20,6 +20,15 @@
 @import url('pages/order.css');
 @import url('pages/search.css');
 
+@import url('admin/admin-cards.css');
+@import url('admin/admin-dashboard.css');
+@import url('admin/admin-form.css');
+@import url('admin/admin-header.css');
+@import url('admin/admin-layout.css');
+@import url('admin/admin-sidebar.css');
+@import url('admin/stock.css');
+@import url('admin/admin-table.css');
+
 @import url('admin/admin.css');
 
 @media (max-width: 768px) {

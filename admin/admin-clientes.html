@@ -1,50 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <title>Clientes</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/admin/admin-layout.css">
 </head>
-<body>
 
-<section class="admin-page">
+<body class="admin-body">
 
-    <!-- MENU LATERAL -->
-    <aside class="admin-menu">
-        <ul>
-            <li><a href="admin-dashboard.html">Dashboard</a></li>
-            <li><a href="admin-livros.html">Livros</a></li>
-            <li><a href="admin-clientes.html">Clientes</a></li>
-            <li><a href="admin-pedidos.html">Pedidos</a></li>
-            <li><a href="admin-estoque.html">Estoque</a></li>
-            <li><a href="admin-trocas.html">Trocas</a></li>
-            <li><a href="../index.html">Voltar à Loja</a></li>
-        </ul>
-    </aside>
+    <div class="admin-layout">
 
-    <!-- CONTEÚDO -->
-    <div class="admin-content">
-        <h2>Clientes</h2>
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>Painel Admin</h2>
+            </div>
 
-        <table class="orders-table">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Felipi Pereira</td>
-                    <td>felipi@email.com</td>
-                    <td>Ativo</td>
-                </tr>
-            </tbody>
-        </table>
+            <nav class="admin-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="admin-clientes.html">Clientes</a>
+                <a href="admin-livros.html">Livros</a>
+                <a href="admin-estoque.html">Estoque</a>
+                <a href="admin-pedidos.html">Pedidos</a>
+                <a href="admin-trocas.html">Trocas</a>
+                <a href="analise-vendas.html">Análise de Vendas</a>
+            </nav>
+
+            <div class="admin-back-store">
+                <a href="../index.html">← Voltar para Loja</a>
+            </div>
+        </aside>
+
+        <!-- ÁREA PRINCIPAL -->
+        <div class="admin-main">
+
+            <!-- HEADER -->
+            <header class="admin-header">
+                <h1>Clientes</h1>
+                <div class="admin-user">
+                    <span>Administrador</span>
+                </div>
+            </header>
+
+            <!-- CONTEÚDO -->
+            <section class="admin-content">
+                <div class="admin-container">
+
+                    <div class="admin-page-header">
+                        <h2>Clientes</h2>
+                        <button class="btn-primary">+ Novo Cliente</button>
+                    </div>
+
+                    <div class="admin-filters">
+                        <input type="text" placeholder="Buscar cliente..." class="admin-input">
+                        <select class="admin-select">
+                            <option>Todos</option>
+                            <option>Ativos</option>
+                            <option>Inativos</option>
+                        </select>
+                    </div>
+
+                    <div class="admin-table-wrapper">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                    <th>Cadastro</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Maria Silva</td>
+                                    <td>maria@email.com</td>
+                                    <td><span class="status success">Ativo</span></td>
+                                    <td>12/01/2026</td>
+                                    <td class="admin-actions">
+                                        <button class="btn-link">Ver</button>
+                                        <button class="btn-link">Editar</button>
+                                        <button class="btn-danger">Desativar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <div class="admin-pagination">
+                                <button class="page-btn">Anterior</button>
+                                <button class="page-number active">1</button>
+                                <button class="page-number">2</button>
+                                <button class="page-number">3</button>
+                                <button class="page-btn">Próximo</button>
+                            </div>
+                        </table>
+                    </div>
+
+                </div>
+            </section>
+        </div>
     </div>
-
-</section>
-
 </body>
+
 </html>

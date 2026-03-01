@@ -1,66 +1,119 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <title>Controle de Estoque</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/admin/admin-layout.css">
 </head>
-<body>
 
-<section class="admin-page">
+<body class="admin-body">
 
-    <!-- MENU LATERAL -->
-    <aside class="admin-menu">
-        <ul>
-            <li><a href="admin-dashboard.html">Dashboard</a></li>
-            <li><a href="admin-livros.html">Livros</a></li>
-            <li><a href="admin-clientes.html">Clientes</a></li>
-            <li><a href="admin-pedidos.html">Pedidos</a></li>
-            <li><a href="admin-estoque.html">Estoque</a></li>
-            <li><a href="admin-trocas.html">Trocas</a></li>
-            <li><a href="../index.html">Voltar à Loja</a></li>
-        </ul>
-    </aside>
+    <div class="admin-layout">
 
-    <!-- CONTEÚDO -->
-    <div class="admin-content">
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>Painel Admin</h2>
+            </div>
 
-        <h2>Controle de Estoque</h2>
+            <nav class="admin-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="admin-clientes.html">Clientes</a>
+                <a href="admin-livros.html">Livros</a>
+                <a href="admin-estoque.html">Estoque</a>
+                <a href="admin-pedidos.html">Pedidos</a>
+                <a href="admin-trocas.html">Trocas</a>
+                <a href="analise-vendas.html">Análise de Vendas</a>
+            </nav>
 
-        <div class="admin-card">
-            <h3>Entrada de Estoque</h3>
+            <div class="admin-back-store">
+                <a href="../index.html">← Voltar para Loja</a>
+            </div>
+        </aside>
 
-            <form class="form-account">
-                <input type="text" placeholder="Livro" required>
-                <input type="number" placeholder="Quantidade" required>
-                <input type="number" placeholder="Custo" required>
+        <!-- ÁREA PRINCIPAL -->
+        <div class="admin-main">
 
-                <button type="submit" class="btn-primary">
-                    Registrar Entrada
-                </button>
-            </form>
+            <!-- HEADER -->
+            <header class="admin-header">
+                <h1>Estoque</h1>
+                <div class="admin-user">
+                    <span>Administrador</span>
+                </div>
+            </header>
+
+            <!-- CONTEÚDO -->
+            <section class="admin-content">
+                <div class="admin-page-header">
+                    <h2>Controle de Estoque</h2>
+                </div>
+
+                <div class="admin-filters">
+                    <input type="text" placeholder="Buscar livro..." class="admin-input">
+                    <select class="admin-select">
+                        <option>Todos</option>
+                        <option>Em Estoque</option>
+                        <option>Estoque Baixo</option>
+                        <option>Sem Estoque</option>
+                    </select>
+                </div>
+
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Livro</th>
+                                <th>Estoque Atual</th>
+                                <th>Mínimo</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10</td>
+                                <td>Clean Code</td>
+                                <td>32</td>
+                                <td>10</td>
+                                <td><span class="stock-status ok">Em Estoque</span></td>
+                                <td class="admin-actions">
+                                    <button class="btn-primary btn-sm">Adicionar</button>
+                                    <button class="btn-secondary btn-sm">Ajustar</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>11</td>
+                                <td>Mindset</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td><span class="stock-status low">Baixo</span></td>
+                                <td class="admin-actions">
+                                    <button class="btn-primary btn-sm">Adicionar</button>
+                                    <button class="btn-secondary btn-sm">Ajustar</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>12</td>
+                                <td>Domain-Driven Design</td>
+                                <td>0</td>
+                                <td>10</td>
+                                <td><span class="stock-status empty">Sem Estoque</span></td>
+                                <td class="admin-actions">
+                                    <button class="btn-primary btn-sm">Adicionar</button>
+                                    <button class="btn-secondary btn-sm">Ajustar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
-
-        <h3 style="margin-top: 30px;">Estoque Atual</h3>
-
-        <table class="orders-table">
-            <thead>
-                <tr>
-                    <th>Livro</th>
-                    <th>Quantidade</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Livro Exemplo</td>
-                    <td>20</td>
-                </tr>
-            </tbody>
-        </table>
-
     </div>
-
-</section>
-
 </body>
+
 </html>
