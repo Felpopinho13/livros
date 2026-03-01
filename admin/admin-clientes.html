@@ -50,7 +50,7 @@
 
                     <div class="admin-page-header">
                         <h2>Clientes</h2>
-                        <button class="btn-primary">+ Novo Cliente</button>
+                        <button class="btn-primary" onclick="abrirModal()">+ Novo Cliente</button>
                     </div>
 
                     <div class="admin-filters">
@@ -102,6 +102,54 @@
             </section>
         </div>
     </div>
+
+    <!-- MODAL CLIENTE -->
+    <div class="admin-modal-overlay" id="clienteModal" style="display:none;">
+        <div class="admin-modal">
+
+            <div class="admin-modal-header">
+                <h3>Novo Cliente</h3>
+                <button class="modal-close" onclick="fecharModal()">✕</button>
+            </div>
+
+            <div class="admin-modal-body">
+
+                <div class="admin-form-group">
+                    <label>Nome</label>
+                    <input type="text" class="admin-input">
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Email</label>
+                    <input type="email" class="admin-input">
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Status</label>
+                    <select class="admin-select">
+                        <option>Ativo</option>
+                        <option>Inativo</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="admin-modal-footer">
+                <button class="btn-secondary btn-sm" onclick="fecharModal()">Cancelar</button>
+                <button class="btn-primary btn-sm" onclick="fecharModal()">Salvar</button>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        function abrirModal() {
+            document.getElementById('clienteModal').style.display = 'flex';
+        }
+
+        function fecharModal() {
+            document.getElementById('clienteModal').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
