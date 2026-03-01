@@ -144,6 +144,12 @@
     border-radius: 8px;
 }
 
+.btn-small {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
 /* Responsividade para botões em coluna */
 @media (max-width: 768px) {
     .btn-amazon {

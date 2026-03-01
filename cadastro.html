@@ -2,80 +2,58 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Alterar Senha</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Criar Conta</title>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body>
 
 <section class="auth-page">
 
-    <div class="auth-box">
+    <div class="auth-container">
 
-        <h2>Criar Conta</h2>
+        <div class="auth-box">
+            <h2>Criar Conta</h2>
 
-        <form action="area-cliente.html" method="POST" id="formCadastro">
+            <form id="register-form" class="auth-form">
 
-            <input 
-                type="text" 
-                name="nome" 
-                placeholder="Nome completo" 
-                required>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Digite seu email" required>
+                </div>
 
-            <input 
-                type="text" 
-                name="cpf" 
-                placeholder="CPF" 
-                maxlength="14"
-                required>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" placeholder="Crie uma senha" required>
+                </div>
 
-            <input 
-                type="date" 
-                name="dataNascimento" 
-                required>
+                <div class="form-group">
+                    <label>Confirmar senha</label>
+                    <input type="password" placeholder="Confirme sua senha" required>
+                </div>
 
-            <select name="genero">
-                <option value="">Selecione o gênero</option>
-                <option value="masculino">Masculino</option>
-                <option value="feminino">Feminino</option>
-                <option value="outro">Outro</option>
-            </select>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        Aceito os <a href="#">Termos de uso</a>
+                    </label>
+                </div>
 
-            <input 
-                type="tel" 
-                name="telefone" 
-                placeholder="Telefone">
+                <button type="submit" class="btn-primary btn-block">
+                    Criar Conta
+                </button>
 
-            <input 
-                type="email" 
-                name="email" 
-                placeholder="Email" 
-                required>
+            </form>
 
-            <input 
-                type="password" 
-                name="senha" 
-                id="senha"
-                placeholder="Senha" 
-                required>
+            <div class="auth-links">
+                <p>Já tem conta? <a href="login.html">Entrar</a></p>
+            </div>
 
-            <input 
-                type="password" 
-                name="confirmarSenha" 
-                id="confirmarSenha"
-                placeholder="Confirmar senha" 
-                required>
-
-            <button type="submit" class="btn-primary">
-                Cadastrar
-            </button>
-
-        </form>
-
-        <p>
-            Já possui conta? 
-            <a href="login.html">Entrar</a>
-        </p>
+        </div>
 
     </div>
 
 </section>
+
+</body>
+</html>

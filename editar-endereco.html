@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Editar Endereço</title>
@@ -8,95 +9,96 @@
 
 <body>
 
-<header class="header">
-    <div class="container">
-        <div class="logo">BookStore</div>
-        <div class="search-box">
-            <input type="text" placeholder="Buscar livros...">
-            <button>🔍</button>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">BookStore</a>
+            <div class="search-box">
+                <input type="text" placeholder="Buscar livros...">
+                <button>🔍</button>
+            </div>
+            <nav class="nav-icons">
+                <a href="index.html">🏠</a>
+                <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+                <a href="area-cliente.html">👤</a>
+            </nav>
         </div>
-        <nav class="nav-icons">
-            <a href="index.html">🏠</a>
-            <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
-            <a href="area-cliente.html">👤</a>
-        </nav>
-    </div>
-</header>
+    </header>
 
-<section class="address-edit-page">
+    <section class="address-edit-page">
 
-    <div class="address-edit-container">
+        <div class="address-edit-container">
 
-        <div class="breadcrumb">
-            Central Minha Conta › Endereços › <strong>Editar</strong>
+            <div class="breadcrumb">
+                Central Minha Conta › Endereços › <strong>Editar</strong>
+            </div>
+
+            <h2>Editar Endereço</h2>
+
+            <form class="address-form">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Nome completo</label>
+                        <input type="text" value="Felipi Pereira">
+                    </div>
+
+                    <div class="form-group">
+                        <label>CEP</label>
+                        <input type="text" value="08500-000">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rua</label>
+                        <input type="text" value="Rua Exemplo">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Número</label>
+                        <input type="text" value="123">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Complemento</label>
+                        <input type="text" placeholder="Opcional">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bairro</label>
+                        <input type="text" value="Centro">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cidade</label>
+                        <input type="text" value="São Paulo">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Estado</label>
+                        <input type="text" value="SP">
+                    </div>
+
+                </div>
+
+                <div class="form-checkbox">
+                    <input type="checkbox" id="default">
+                    <label for="default">Definir como endereço padrão</label>
+                </div>
+
+                <div class="form-actions">
+                    <a href="enderecos-cliente.html" class="btn-outline">
+                        Cancelar
+                    </a>
+
+                    <button type="submit" class="btn-primary">
+                        Salvar alterações
+                    </button>
+                </div>
+
+            </form>
+
         </div>
-
-        <h2>Editar Endereço</h2>
-
-        <form class="address-form">
-
-            <div class="form-grid">
-
-                <div class="form-group">
-                    <label>Nome completo</label>
-                    <input type="text" value="Felipi Pereira">
-                </div>
-
-                <div class="form-group">
-                    <label>CEP</label>
-                    <input type="text" value="08500-000">
-                </div>
-
-                <div class="form-group">
-                    <label>Rua</label>
-                    <input type="text" value="Rua Exemplo">
-                </div>
-
-                <div class="form-group">
-                    <label>Número</label>
-                    <input type="text" value="123">
-                </div>
-
-                <div class="form-group">
-                    <label>Complemento</label>
-                    <input type="text" placeholder="Opcional">
-                </div>
-
-                <div class="form-group">
-                    <label>Bairro</label>
-                    <input type="text" value="Centro">
-                </div>
-
-                <div class="form-group">
-                    <label>Cidade</label>
-                    <input type="text" value="São Paulo">
-                </div>
-
-                <div class="form-group">
-                    <label>Estado</label>
-                    <input type="text" value="SP">
-                </div>
-
-            </div>
-
-            <div class="form-checkbox">
-                <input type="checkbox" id="default">
-                <label for="default">Definir como endereço padrão</label>
-            </div>
-
-            <div class="form-actions">
-                <a href="enderecos-cliente.html" class="btn-outline">
-                    Cancelar
-                </a>
-
-                <button type="submit" class="btn-primary">
-                    Salvar alterações
-                </button>
-            </div>
-
-        </form>
-
-    </div>
-</section>
+    </section>
 </body>
+
 </html>

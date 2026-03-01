@@ -3,25 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body>
-
 <section class="auth-page">
-    <div class="auth-box">
-        <h2>Entrar</h2>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h2>Entrar</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Digite seu email" required>
+                </div>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" placeholder="Digite sua senha" required>
+                </div>
+                <button href="area-cliente.html" type="submit" class="btn-primary btn-block">
+                    Entrar
+                </button>
+            </form>
 
-        <form action="area-cliente.html">
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Senha" required>
-
-            <button type="submit" class="btn-primary">Entrar</button>
-        </form>
-
-        <p><a href="alterar-senha.html">Esqueci minha senha</a></p>
-        <p>Não tem conta? <a href="cadastro.html">Cadastrar</a></p>
+            <div class="auth-links">
+                <a href="alterar-senha.html">Esqueci minha senha</a>
+                <p>Não tem conta? <a href="cadastro.html">Cadastrar</a></p>
+            </div>
+        </div>
     </div>
 </section>
-
 </body>
 </html>

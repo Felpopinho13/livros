@@ -1,23 +1,76 @@
-<section class="search-page">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    <head>
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
-    <aside class="filters">
-        <h3>Filtros</h3>
-        <input type="text" placeholder="Autor">
-        <input type="text" placeholder="Categoria">
-        <input type="number" placeholder="Preço máximo">
-        <button class="btn-primary">Aplicar</button>
-    </aside>
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Endereço</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
 
-    <div class="product-grid">
-        <div class="product-card">
-            <img src="https://via.placeholder.com/150">
-            <h3>Livro Encontrado</h3>
-            <p class="price">R$ 49,90</p>
-            <button class="btn-primary">Adicionar</button>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">BookStore</a>
+            <div class="search-box">
+                <input type="text" placeholder="Buscar livros...">
+                <button>🔍</button>
+            </div>
+            <nav class="nav-icons">
+                <a href="index.html">🏠</a>
+                <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+                <a href="area-cliente.html">👤</a>
+                <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
+            </nav>
         </div>
-    </div>
+    </header>
+    <section class="search-page">
 
-</section>
+        <div class="container">
+
+            <div class="search-layout">
+
+                <!-- FILTROS -->
+                <aside class="filters">
+                    <h3>Filtros</h3>
+
+                    <div class="filter-group">
+                        <label>Autor</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Categoria</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Preço máximo</label>
+                        <input type="number">
+                    </div>
+
+                    <button class="btn-primary btn-block">
+                        Aplicar
+                    </button>
+                </aside>
+
+                <!-- PRODUTOS -->
+                <div class="product-grid">
+
+                    <a href="livro-detalhe.html" class="product-card">
+                        <img src="assets/img/1984.jpg" alt="1984">
+                        <h3>1984</h3>
+                        <p class="price">R$ 49,90</p>
+                        <span class="btn-outline btn-small">Ver produto</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+</body>
+
+</html>
