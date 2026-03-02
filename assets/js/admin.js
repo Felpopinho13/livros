@@ -166,3 +166,54 @@ function abrirModalVerTroca(numero, pedido, cliente, motivo, status, data) {
 function fecharModalVerTroca() {
     document.getElementById('verTrocaModal').style.display = 'none';
 }
+
+const ctx = document.getElementById('salesChart');
+
+// Dados iniciais mockados
+let salesChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['2026-01-01', '2026-01-02'],
+        datasets: [{
+            label: 'Faturamento (R$)',
+            data: [15000, 21000],
+            borderColor: '#ff9900',
+            backgroundColor: 'rgba(255,153,0,0.1)',
+            borderWidth: 3,
+            tension: 0.3,
+            fill: true,
+            pointRadius: 5,
+            pointBackgroundColor: '#ff9900'
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: false }
+        },
+        scales: {
+            y: { beginAtZero: true }
+        }
+    }
+});
+
+// Evento do botão Filtrar
+document.getElementById("btnFiltrar").addEventListener("click", function () {
+
+    const inicio = document.getElementById("dataInicio").value;
+    const fim = document.getElementById("dataFim").value;
+
+    if (!inicio || !fim) {
+        alert("Selecione as duas datas.");
+        return;
+    }
+
+    // MOCK: gerar valores aleatórios só para demonstração
+    const valor1 = Math.floor(Math.random() * 20000) + 10000;
+    const valor2 = Math.floor(Math.random() * 20000) + 10000;
+
+    salesChart.data.labels = [inicio, fim];
+    salesChart.data.datasets[0].data = [valor1, valor2];
+
+    salesChart.update();
+});

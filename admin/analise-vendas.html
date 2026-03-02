@@ -51,9 +51,8 @@
                 </div>
 
                 <div class="admin-filters">
-                    <input type="date" class="admin-input">
-                    <input type="date" class="admin-input">
-
+                    <input type="date" class="admin-input" id="dataInicio">
+                    <input type="date" class="admin-input" id="dataFim">
                     <select class="admin-select">
                         <option>Últimos 7 dias</option>
                         <option>Últimos 30 dias</option>
@@ -61,7 +60,7 @@
                         <option>Este ano</option>
                     </select>
 
-                    <button class="btn-primary btn-sm">Filtrar</button>
+                    <button class="btn-primary btn-sm" id="btnFiltrar">Filtrar</button>
                 </div>
 
                 <!-- CARDS RESUMO -->
@@ -98,11 +97,7 @@
 
                     <div class="dashboard-box">
                         <h3>Faturamento por Mês</h3>
-
-                        <div class="dashboard-box">
-                            <h3>Faturamento por Mês</h3>
-                            <canvas id="salesChart"></canvas>
-                        </div>
+                        <canvas id="salesChart"></canvas>
                     </div>
 
                 </div>
@@ -139,41 +134,9 @@
             </section>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        const ctx = document.getElementById('salesChart');
 
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
-                datasets: [{
-                    label: 'Faturamento (R$)',
-                    data: [12000, 19000, 15000, 22000, 18000, 25000],
-                    borderColor: '#ff9900',
-                    backgroundColor: 'rgba(255,153,0,0.1)',
-                    borderWidth: 3,
-                    tension: 0.3,
-                    fill: true,
-                    pointRadius: 4,
-                    pointBackgroundColor: '#ff9900'
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../assets/js/admin.js"></script>
 </body>
 
 </html>
