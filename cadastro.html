@@ -1,59 +1,175 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <title>Criar Conta</title>
+    <title>Criar Conta - BookStore</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/pages/cadastro.css">
 </head>
 
 <body>
 
-<section class="auth-page">
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">BookStore</a>
+            <nav class="nav-icons">
+                <a href="index.html">🏠</a>
+                <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+                <a href="area-cliente.html">👤</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="auth-container">
+    <section class="register-page">
+        <div class="register-container">
 
-        <div class="auth-box">
-            <h2>Criar Conta</h2>
+            <div class="register-left">
+                <h1>Criar sua conta</h1>
+                <p>Cadastre-se e aproveite ofertas exclusivas, lista de desejos e muito mais.</p>
+            </div>
 
-            <form id="register-form" class="auth-form">
+            <div class="register-right">
+                <form class="register-form">
 
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" placeholder="Digite seu email" required>
-                </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Gênero</label>
+                            <select required>
+                                <option value="">Selecione</option>
+                                <option>Masculino</option>
+                                <option>Feminino</option>
+                                <option>Prefiro não informar</option>
+                            </select>
+                        </div>
 
-                <div class="form-group">
-                    <label>Senha</label>
-                    <input type="password" placeholder="Crie uma senha" required>
-                </div>
+                        <div class="form-group">
+                            <label>Data de Nascimento</label>
+                            <input type="date" required>
+                        </div>
+                    </div>
 
-                <div class="form-group">
-                    <label>Confirmar senha</label>
-                    <input type="password" placeholder="Confirme sua senha" required>
-                </div>
+                    <div class="form-group">
+                        <label>Nome Completo</label>
+                        <input type="text" placeholder="Digite seu nome completo" required>
+                    </div>
 
-                <div class="form-checkbox">
-                    <input type="checkbox" id="terms" required>
-                    <label for="terms">
-                        Aceito os <a href="#">Termos de uso</a>
-                    </label>
-                </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>CPF</label>
+                            <input type="text" placeholder="000.000.000-00" required>
+                        </div>
 
-                <button type="submit" class="btn-primary btn-block">
-                    Criar Conta
-                </button>
+                        <div class="form-group">
+                            <label>Telefone</label>
+                            <input type="tel" placeholder="(11) 99999-9999" required>
+                        </div>
+                    </div>
 
-            </form>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" placeholder="seuemail@email.com" required>
+                    </div>
 
-            <div class="auth-links">
-                <p>Já tem conta? <a href="login.html">Entrar</a></p>
+                    <div class="form-group">
+                        <label>Senha</label>
+                        <input type="password" placeholder="Crie uma senha segura" required>
+                    </div>
+
+                    <h3 class="section-title">Endereço</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nome do endereço</label>
+                            <input type="text" placeholder="Ex: Minha casa, Apartamento..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>CEP</label>
+                            <input type="text" placeholder="00000-000" id="cep" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Logradouro</label>
+                        <input type="text" placeholder="Rua, Avenida..." id="logradouro" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Número</label>
+                            <input type="text" placeholder="123" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Complemento</label>
+                            <input type="text" placeholder="Apto, bloco, referência">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bairro</label>
+                        <input type="text" id="bairro" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Cidade</label>
+                            <input type="text" id="cidade" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Estado</label>
+                            <select id="estado" required>
+                                <option value="">Selecione</option>
+                                <option>AC</option>
+                                <option>AL</option>
+                                <option>AP</option>
+                                <option>AM</option>
+                                <option>BA</option>
+                                <option>CE</option>
+                                <option>DF</option>
+                                <option>ES</option>
+                                <option>GO</option>
+                                <option>MA</option>
+                                <option>MT</option>
+                                <option>MS</option>
+                                <option>MG</option>
+                                <option>PA</option>
+                                <option>PB</option>
+                                <option>PR</option>
+                                <option>PE</option>
+                                <option>PI</option>
+                                <option>RJ</option>
+                                <option>RN</option>
+                                <option>RS</option>
+                                <option>RO</option>
+                                <option>RR</option>
+                                <option>SC</option>
+                                <option>SP</option>
+                                <option>SE</option>
+                                <option>TO</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Criar Conta
+                    </button>
+
+                    <p class="login-link">
+                        Já possui conta? <a href="login.html">Entrar</a>
+                    </p>
+
+                </form>
             </div>
 
         </div>
+    </section>
 
-    </div>
-
-</section>
+    <footer class="footer">
+        <p>© 2026 BookStore - Todos os direitos reservados</p>
+    </footer>
 
 </body>
+
 </html>
