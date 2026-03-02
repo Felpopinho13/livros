@@ -23,12 +23,12 @@
 
 @import url('admin/admin-cards.css');
 @import url('admin/admin-dashboard.css');
-@import url('admin/admin-form.css');
+@import url('admin/admin-forms.css');
 @import url('admin/admin-header.css');
 @import url('admin/admin-layout.css');
 @import url('admin/admin-modal.css');
 @import url('admin/admin-sidebar.css');
-@import url('admin/stock.css');
+@import url('admin/admin-stock.css');
 @import url('admin/admin-table.css');
 
 @media (max-width: 768px) {

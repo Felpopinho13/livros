@@ -1,0 +1,4 @@
+const usuario = localStorage.getItem("usuarioLogado");
+const storageKey = "wishlist_" + usuario;
+
+const wishlist = JSON.parse(localStorage.getItem(storageKey)) || [];

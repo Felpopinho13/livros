@@ -6,23 +6,26 @@
     <title>Detalhes do Livro</title>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<header class="header">
-    <div class="container">
-        <a href="index.html" class="logo">BookStore</a>
-        <div class="search-box">
-            <input type="text" placeholder="Buscar livros...">
-            <button>🔍</button>
-        </div>
-        <nav class="nav-icons">
-            <a href="index.html">🏠</a>
-            <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
-            <a href="area-cliente.html">👤</a>
-            <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
-        </nav>
-    </div>
-</header>
 
 <body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">BookStore</a>
+            <div class="search-box">
+                <input type="text" placeholder="Buscar livros...">
+                <button>🔍</button>
+            </div>
+            <nav class="nav-icons">
+                <a href="index.html">🏠</a>
+                <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+                <button id="wishlistToggle" class="wishlist-header">
+                    ❤ <span id="wishlistCount">0</span>
+                </button>
+                <a href="area-cliente.html">👤</a>
+                <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
+            </nav>
+        </div>
+    </header>
     <section class="book-detail">
         <div class="container book-detail-grid">
 
@@ -33,7 +36,14 @@
 
             <!-- INFORMAÇÕES -->
             <div class="book-info">
-                <h1>1984</h1>
+                <div class="book-title-row">
+                    <h1>1984</h1>
+
+                    <button class="btn-wishlist" data-id="1" data-titulo="1984" data-preco="79.90"
+                        data-imagem="assets/img/1984.jpg">
+                        ❤
+                    </button>
+                </div>
                 <p class="author">por George Orwell</p>
 
                 <p class="description">
@@ -60,11 +70,26 @@
         </div>
     </section>
 
+    <!-- Modal da Lista de Desejos -->
+    <div class="modal-overlay" id="wishlistModal">
+        <div class="modal wishlist-modal">
+
+            <div class="modal-header">
+                <h3>Minha Lista de Desejos</h3>
+                <button id="closeWishlist">✕</button>
+            </div>
+
+            <div class="wishlist-content"></div>
+
+        </div>
+    </div>
+
     <footer class="footer">
         <p>© 2026 BookStore - Todos os direitos reservados</p>
     </footer>
 
     <script src="assets/js/cart.js"></script>
+    <script src="assets/js/wishlist.js"></script>
 </body>
 
 </html>

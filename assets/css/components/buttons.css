@@ -171,6 +171,29 @@
     color: #fff;
 }
 
+.btn-wishlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: 0.2s ease;
+}
+
+.btn-wishlist:hover {
+    transform: scale(1.1);
+}
+
+.btn-wishlist.active {
+    color: red;
+}
+
 /* Responsividade para botões em coluna */
 @media (max-width: 768px) {
     .btn-amazon {

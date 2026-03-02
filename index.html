@@ -23,6 +23,9 @@
             <nav class="nav-icons">
                 <a href="index.html">🏠</a>
                 <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+                <button id="wishlistToggle" class="wishlist-header">
+                    ❤ <span id="wishlistCount">0</span>
+                </button>
                 <a href="area-cliente.html">👤</a>
                 <a href="login.html">👤</a>
                 <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
@@ -49,6 +52,10 @@
                         <h3>1984</h3>
                     </a>
                     <p class="price">R$ 59,90</p>
+                    <button class="btn-wishlist" data-id="1" data-titulo="1984" data-preco="59.90"
+                        data-imagem="assets/img/1984.jpg">
+                        ❤
+                    </button>
                     <button class="btn btn-primary btn-block">
                         Adicionar
                     </button>
@@ -58,6 +65,20 @@
         </div>
     </section>
 
+    <!-- Modal da Lista de Desejos -->
+    <div class="modal-overlay" id="wishlistModal">
+        <div class="modal wishlist-modal">
+
+            <div class="modal-header">
+                <h3>Minha Lista de Desejos</h3>
+                <button id="closeWishlist">✕</button>
+            </div>
+
+            <div class="wishlist-content"></div>
+
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <p>© 2026 BookStore - Todos os direitos reservados</p>
@@ -66,6 +87,7 @@
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/cart.js"></script>
+    <script src="assets/js/wishlist.js"></script>
 </body>
 
 </html>

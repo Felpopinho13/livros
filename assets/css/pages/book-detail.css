@@ -61,3 +61,13 @@
 .book-buy-box input {
     margin-bottom: 15px;
 }
+
+.book-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.book-title-row .btn-wishlist {
+    position: static; /* diferente do card */
+}
