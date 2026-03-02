@@ -1,0 +1,62 @@
+/* ===============================
+   MODAL COMPONENT
+================================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    animation: modalFade 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal h3 {
+    margin: 0;
+}
+
+.modal input,
+.modal select,
+.modal textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+@keyframes modalFade {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

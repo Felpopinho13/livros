@@ -3,14 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Detalhes do Livro</title>
+  <title>Finalizar Compra</title>
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
   <header class="header">
     <div class="container">
-      <div class="logo">BookStore</div>
+      <a href="index.html" class="logo">BookStore</a>
 
       <form class="search-box" action="resultados-busca.html" method="GET">
         <input type="text" name="q" placeholder="Buscar livros..." class="input">
@@ -35,17 +35,66 @@
         <div class="checkout-form">
 
           <div class="card checkout-card">
-            <h3>Endereço de entrega</h3>
-            <input class="input" placeholder="Rua e número">
-            <input class="input" placeholder="Cidade">
-            <input class="input" placeholder="CEP">
+            <div class="address-grid">
+
+              <input placeholder="CEP">
+              <input placeholder="Logradouro">
+
+              <input placeholder="Número">
+              <input placeholder="Complemento">
+
+              <input placeholder="Bairro">
+
+              <input placeholder="Cidade">
+              <input placeholder="Estado">
+
+            </div>
           </div>
 
-          <div class="card checkout-card">
-            <h3>Método de pagamento</h3>
-            <input class="input" placeholder="Número do cartão">
-            <input class="input" placeholder="Nome no cartão">
-            <input class="input" placeholder="Validade">
+          <div class="payment-section card">
+
+            <h3>Forma de Pagamento</h3>
+
+            <div class="payment-options">
+
+              <label>
+                <input type="radio" name="payment" value="pix">
+                Pix
+              </label>
+
+              <label>
+                <input type="radio" name="payment" value="boleto">
+                Boleto
+              </label>
+
+              <label>
+                <input type="radio" name="payment" value="cartao">
+                Cartão de Crédito
+              </label>
+
+            </div>
+
+            <!-- PIX -->
+            <div class="payment-form" id="pixForm">
+              <input type="text" placeholder="Nome completo">
+              <input type="text" placeholder="CPF">
+              <input type="text" placeholder="Telefone">
+            </div>
+
+            <!-- BOLETO -->
+            <div class="payment-form" id="boletoForm">
+            </div>
+
+            <!-- CARTÃO -->
+            <div class="payment-form" id="cartaoForm">
+              <input type="text" placeholder="Número do Cartão">
+              <input type="text" placeholder="Nome impresso no cartão">
+              <input type="text" placeholder="Código de segurança (CVV)">
+              <input type="text" placeholder="Validade (MM/AA)">
+              <input type="email" placeholder="Email">
+              <input type="date" placeholder="Data de nascimento">
+            </div>
+
           </div>
 
         </div>
@@ -57,14 +106,23 @@
           <hr>
           <p class="total-price">Total: R$ 74,90</p>
 
-          <a href="pedido-confirmado.html" class="btn btn-primary btn-block">
+          <button class="btn btn-primary btn-block" id="finalizarPagamento">
             Finalizar pagamento
-          </a>
+          </button>
         </div>
 
       </div>
     </div>
   </section>
+  <div class="modal-overlay" id="paymentModal">
+    <div class="modal">
+      <h3 id="paymentMessage"></h3>
+      <div class="modal-actions">
+        <button class="btn-primary" id="closePaymentModal">OK</button>
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/checkout.js"></script>
 </body>
 
 </html>

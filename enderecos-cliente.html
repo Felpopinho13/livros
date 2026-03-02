@@ -7,25 +7,25 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<header class="header">
-    <div class="container">
-        <div class="logo">BookStore</div>
-
-        <form class="search-box" action="resultados-busca.html" method="GET">
-            <input type="text" name="q" placeholder="Buscar livros..." class="input">
-            <button type="submit">🔍</button>
-        </form>
-
-        <nav class="nav-icons">
-            <a href="index.html">🏠</a>
-            <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
-            <a href="area-cliente.html">👤</a>
-            <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
-        </nav>
-    </div>
-</header>
 
 <body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">BookStore</a>
+
+            <form class="search-box" action="resultados-busca.html" method="GET">
+                <input type="text" name="q" placeholder="Buscar livros..." class="input">
+                <button type="submit">🔍</button>
+            </form>
+
+            <nav class="nav-icons">
+                <a href="index.html">🏠</a>
+                <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+                <a href="area-cliente.html">👤</a>
+                <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
+            </nav>
+        </div>
+    </header>
     <section class="address-page">
 
         <div class="address-container">
@@ -77,6 +77,34 @@
             </div>
         </div>
     </section>
+
+    <!-- MODAL NOVO ENDEREÇO -->
+    <div class="modal-overlay" id="addressModal">
+        <div class="modal">
+
+            <h3>Novo Endereço</h3>
+
+            <form id="addressForm">
+
+                <input type="text" name="nome" placeholder="Nome do endereço (Ex: Casa)" required>
+                <input type="text" name="cep" placeholder="CEP" required>
+                <input type="text" name="logradouro" placeholder="Logradouro" required>
+                <input type="text" name="numero" placeholder="Número" required>
+                <input type="text" name="complemento" placeholder="Complemento">
+                <input type="text" name="bairro" placeholder="Bairro" required>
+                <input type="text" name="cidade" placeholder="Cidade" required>
+                <input type="text" name="estado" placeholder="Estado" required>
+
+                <div class="modal-actions">
+                    <button type="button" id="closeModal" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-primary">Salvar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/endereco.js"></script>
 </body>
 
 </html>
