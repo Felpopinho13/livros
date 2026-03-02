@@ -85,7 +85,10 @@
                                 <td><span class="exchange-status requested">Solicitado</span></td>
                                 <td>26/02/2026</td>
                                 <td class="admin-actions">
-                                    <button class="btn-primary btn-sm">Analisar</button>
+                                    <button class="btn-primary btn-sm"
+                                        onclick="abrirModalTroca('TR-001','#10234','Maria Silva','Produto danificado')">
+                                        Analisar
+                                    </button>
                                 </td>
                             </tr>
 
@@ -97,7 +100,10 @@
                                 <td><span class="exchange-status approved">Aprovado</span></td>
                                 <td>27/02/2026</td>
                                 <td class="admin-actions">
-                                    <button class="btn-secondary btn-sm">Ver</button>
+                                    <button class="btn-secondary btn-sm"
+                                        onclick="abrirModalVerTroca('TR-002','#10235','João Lima','Livro errado','Aprovado','27/02/2026')">
+                                        Ver
+                                    </button>
                                 </td>
                             </tr>
 
@@ -109,7 +115,10 @@
                                 <td><span class="exchange-status refused">Recusado</span></td>
                                 <td>27/02/2026</td>
                                 <td class="admin-actions">
-                                    <button class="btn-secondary btn-sm">Ver</button>
+                                    <button class="btn-secondary btn-sm"
+                                        onclick="abrirModalVerTroca('TR-003','#10236','Ana Costa','Arrependimento','Recusado','27/02/2026')">
+                                        Ver
+                                    </button>
                                 </td>
                             </tr>
 
@@ -126,6 +135,73 @@
             </section>
         </div>
     </div>
+
+    <!-- MODAL ANALISAR TROCA -->
+    <div class="admin-modal-overlay" id="analisarTrocaModal" style="display:none;">
+        <div class="admin-modal" style="width:650px;">
+
+            <div class="admin-modal-header">
+                <h3>Analisar Troca</h3>
+                <button class="modal-close" onclick="fecharModalTroca()">✕</button>
+            </div>
+
+            <div class="admin-modal-body">
+
+                <p><strong>Nº Troca:</strong> <span id="trocaNumero"></span></p>
+                <p><strong>Pedido:</strong> <span id="trocaPedido"></span></p>
+                <p><strong>Cliente:</strong> <span id="trocaCliente"></span></p>
+                <p><strong>Motivo:</strong> <span id="trocaMotivo"></span></p>
+
+                <div class="admin-form-group" style="margin-top:20px;">
+                    <label>Decisão</label>
+                    <select class="admin-select">
+                        <option>Aprovar</option>
+                        <option>Recusar</option>
+                    </select>
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Observação</label>
+                    <textarea class="admin-input" rows="3"></textarea>
+                </div>
+
+            </div>
+
+            <div class="admin-modal-footer">
+                <button class="btn-secondary btn-sm" onclick="fecharModalTroca()">Cancelar</button>
+                <button class="btn-primary btn-sm">Confirmar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL VER TROCA -->
+    <div class="admin-modal-overlay" id="verTrocaModal" style="display:none;">
+        <div class="admin-modal" style="width:600px;">
+
+            <div class="admin-modal-header">
+                <h3>Detalhes da Troca</h3>
+                <button class="modal-close" onclick="fecharModalVerTroca()">✕</button>
+            </div>
+
+            <div class="admin-modal-body">
+
+                <p><strong>Nº Troca:</strong> <span id="verTrocaNumero"></span></p>
+                <p><strong>Pedido:</strong> <span id="verTrocaPedido"></span></p>
+                <p><strong>Cliente:</strong> <span id="verTrocaCliente"></span></p>
+                <p><strong>Motivo:</strong> <span id="verTrocaMotivo"></span></p>
+                <p><strong>Status:</strong> <span id="verTrocaStatus"></span></p>
+                <p><strong>Data:</strong> <span id="verTrocaData"></span></p>
+
+            </div>
+
+            <div class="admin-modal-footer">
+                <button class="btn-secondary btn-sm" onclick="fecharModalVerTroca()">Fechar</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="../assets/js/admin.js"></script>
 </body>
 
 </html>

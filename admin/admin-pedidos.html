@@ -85,7 +85,10 @@
                                 <td><span class="order-status paid">Pago</span></td>
                                 <td class="order-total">R$ 189,90</td>
                                 <td class="admin-actions">
-                                    <button class="btn-primary btn-sm">Detalhes</button>
+                                    <button class="btn-primary btn-sm"
+                                        onclick="abrirModalPedido('#10234','Maria Silva','25/02/2026','Pago','R$ 189,90')">
+                                        Detalhes
+                                    </button>
                                 </td>
                             </tr>
 
@@ -96,7 +99,10 @@
                                 <td><span class="order-status shipped">Enviado</span></td>
                                 <td class="order-total">R$ 79,90</td>
                                 <td class="admin-actions">
-                                    <button class="btn-primary btn-sm">Detalhes</button>
+                                    <button class="btn-primary btn-sm"
+                                        onclick="abrirModalPedido('#10235','João Lima','26/02/2026','Enviado','R$ 79,90')">
+                                        Detalhes
+                                    </button>
                                 </td>
                             </tr>
 
@@ -107,7 +113,10 @@
                                 <td><span class="order-status canceled">Cancelado</span></td>
                                 <td class="order-total">R$ 120,00</td>
                                 <td class="admin-actions">
-                                    <button class="btn-primary btn-sm">Detalhes</button>
+                                    <button class="btn-primary btn-sm"
+                                        onclick="abrirModalPedido('#10236','Ana Costa','26/02/2026','Cancelado','R$ 120,00')">
+                                        Detalhes
+                                    </button>
                                 </td>
                             </tr>
 
@@ -124,6 +133,53 @@
             </section>
         </div>
     </div>
+
+    <!-- MODAL DETALHES PEDIDO -->
+    <div class="admin-modal-overlay" id="pedidoDetalheModal" style="display:none;">
+        <div class="admin-modal" style="width:700px;">
+
+            <div class="admin-modal-header">
+                <h3>Detalhes do Pedido</h3>
+                <button class="modal-close" onclick="fecharModalPedido()">✕</button>
+            </div>
+
+            <div class="admin-modal-body">
+
+                <p><strong>Nº Pedido:</strong> <span id="pedidoNumero"></span></p>
+                <p><strong>Cliente:</strong> <span id="pedidoCliente"></span></p>
+                <p><strong>Data:</strong> <span id="pedidoData"></span></p>
+                <p><strong>Status:</strong> <span id="pedidoStatus"></span></p>
+
+                <hr style="margin:20px 0;">
+
+                <h4>Itens do Pedido</h4>
+
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Livro</th>
+                            <th>Qtd</th>
+                            <th>Preço</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pedidoItens">
+                    </tbody>
+                </table>
+
+                <div style="text-align:right; margin-top:15px;">
+                    <strong>Total: <span id="pedidoTotal"></span></strong>
+                </div>
+
+            </div>
+
+            <div class="admin-modal-footer">
+                <button class="btn-secondary btn-sm" onclick="fecharModalPedido()">Fechar</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="../assets/js/admin.js"></script>
 </body>
 
 </html>

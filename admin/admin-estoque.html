@@ -80,8 +80,15 @@
                                 <td>10</td>
                                 <td><span class="stock-status ok">Em Estoque</span></td>
                                 <td class="admin-actions">
-                                    <button class="btn-primary btn-sm">Adicionar</button>
-                                    <button class="btn-secondary btn-sm">Ajustar</button>
+                                    <button class="btn-primary btn-sm"
+                                        onclick="abrirModalAdicionarEstoque('Clean Code')">
+                                        Adicionar
+                                    </button>
+
+                                    <button class="btn-secondary btn-sm"
+                                        onclick="abrirModalAjustarEstoque('Clean Code', 32)">
+                                        Ajustar
+                                    </button>
                                 </td>
                             </tr>
 
@@ -92,8 +99,14 @@
                                 <td>10</td>
                                 <td><span class="stock-status low">Baixo</span></td>
                                 <td class="admin-actions">
-                                    <button class="btn-primary btn-sm">Adicionar</button>
-                                    <button class="btn-secondary btn-sm">Ajustar</button>
+                                    <button class="btn-primary btn-sm" onclick="abrirModalAdicionarEstoque('Mindset')">
+                                        Adicionar
+                                    </button>
+
+                                    <button class="btn-secondary btn-sm"
+                                        onclick="abrirModalAjustarEstoque('Mindset', 5)">
+                                        Ajustar
+                                    </button>
                                 </td>
                             </tr>
 
@@ -114,6 +127,62 @@
             </section>
         </div>
     </div>
+    <!-- MODAL ADICIONAR ESTOQUE -->
+    <div class="admin-modal-overlay" id="adicionarEstoqueModal" style="display:none;">
+        <div class="admin-modal">
+
+            <div class="admin-modal-header">
+                <h3>Adicionar Estoque</h3>
+                <button class="modal-close" onclick="fecharModalAdicionarEstoque()">✕</button>
+            </div>
+
+            <div class="admin-modal-body">
+
+                <p><strong id="livroAdicionarNome"></strong></p>
+
+                <div class="admin-form-group">
+                    <label>Quantidade a adicionar</label>
+                    <input type="number" class="admin-input" id="quantidadeAdicionar">
+                </div>
+
+            </div>
+
+            <div class="admin-modal-footer">
+                <button class="btn-secondary btn-sm" onclick="fecharModalAdicionarEstoque()">Cancelar</button>
+                <button class="btn-primary btn-sm">Confirmar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL AJUSTAR ESTOQUE -->
+    <div class="admin-modal-overlay" id="ajustarEstoqueModal" style="display:none;">
+        <div class="admin-modal">
+
+            <div class="admin-modal-header">
+                <h3>Ajustar Estoque</h3>
+                <button class="modal-close" onclick="fecharModalAjustarEstoque()">✕</button>
+            </div>
+
+            <div class="admin-modal-body">
+
+                <p><strong id="livroAjustarNome"></strong></p>
+
+                <div class="admin-form-group">
+                    <label>Novo valor de estoque</label>
+                    <input type="number" class="admin-input" id="novoEstoque">
+                </div>
+
+            </div>
+
+            <div class="admin-modal-footer">
+                <button class="btn-secondary btn-sm" onclick="fecharModalAjustarEstoque()">Cancelar</button>
+                <button class="btn-primary btn-sm">Salvar</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="../assets/js/admin.js"></script>
 </body>
 
 </html>

@@ -50,7 +50,9 @@
 
                     <div class="admin-page-header">
                         <h2>Clientes</h2>
-                        <button class="btn-primary" onclick="abrirModal()">+ Novo Cliente</button>
+                        <button class="btn-primary" onclick="abrirModalCliente()">
+                            + Novo Cliente
+                        </button>
                     </div>
 
                     <div class="admin-filters">
@@ -82,9 +84,14 @@
                                     <td><span class="status success">Ativo</span></td>
                                     <td>12/01/2026</td>
                                     <td class="admin-actions">
-                                        <button class="btn-link">Ver</button>
-                                        <button class="btn-link">Editar</button>
-                                        <button class="btn-danger">Desativar</button>
+                                        <button class="btn-link"
+                                            onclick="abrirModalVer('Maria Silva', 'maria@email.com', 'Ativo', '12/01/2026')">
+                                            Ver
+                                        </button>
+                                        <button class="btn-link"
+                                            onclick="abrirModalEditar('Maria Silva', 'maria@email.com', 'Ativo')">
+                                            Editar
+                                        </button> <button class="btn-danger">Desativar</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -109,7 +116,7 @@
 
             <div class="admin-modal-header">
                 <h3>Novo Cliente</h3>
-                <button class="modal-close" onclick="fecharModal()">✕</button>
+                <button class="modal-close" onclick="fecharModalCliente()">✕</button>
             </div>
 
             <div class="admin-modal-body">
@@ -135,21 +142,94 @@
             </div>
 
             <div class="admin-modal-footer">
-                <button class="btn-secondary btn-sm" onclick="fecharModal()">Cancelar</button>
+                <button class="btn-secondary btn-sm" onclick="fecharModalCliente()">
+                    Cancelar
+                </button>
                 <button class="btn-primary btn-sm" onclick="fecharModal()">Salvar</button>
             </div>
 
         </div>
     </div>
-    <script>
-        function abrirModal() {
-            document.getElementById('clienteModal').style.display = 'flex';
-        }
 
-        function fecharModal() {
-            document.getElementById('clienteModal').style.display = 'none';
-        }
-    </script>
+    <!-- MODAL VER CLIENTE -->
+    <div class="admin-modal-overlay" id="verClienteModal" style="display:none;">
+        <div class="admin-modal">
+
+            <div class="admin-modal-header">
+                <h3>Detalhes do Cliente</h3>
+                <button class="modal-close" onclick="fecharModalVer()">✕</button>
+            </div>
+
+            <div class="admin-modal-body">
+
+                <div class="admin-form-group">
+                    <label>Nome</label>
+                    <input type="text" class="admin-input" id="verNome" disabled>
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Email</label>
+                    <input type="text" class="admin-input" id="verEmail" disabled>
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Status</label>
+                    <input type="text" class="admin-input" id="verStatus" disabled>
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Data Cadastro</label>
+                    <input type="text" class="admin-input" id="verData" disabled>
+                </div>
+
+            </div>
+
+            <div class="admin-modal-footer">
+                <button class="btn-secondary btn-sm" onclick="fecharModalVer()">Fechar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL EDITAR CLIENTE -->
+    <div class="admin-modal-overlay" id="editarClienteModal" style="display:none;">
+        <div class="admin-modal">
+
+            <div class="admin-modal-header">
+                <h3>Editar Cliente</h3>
+                <button class="modal-close" onclick="fecharModalEditar()">✕</button>
+            </div>
+
+            <div class="admin-modal-body">
+
+                <div class="admin-form-group">
+                    <label>Nome</label>
+                    <input type="text" class="admin-input" id="editarNome">
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Email</label>
+                    <input type="email" class="admin-input" id="editarEmail">
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Status</label>
+                    <select class="admin-select" id="editarStatus">
+                        <option>Ativo</option>
+                        <option>Inativo</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="admin-modal-footer">
+                <button class="btn-secondary btn-sm" onclick="fecharModalEditar()">Cancelar</button>
+                <button class="btn-primary btn-sm">Salvar</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="../assets/js/admin.js"></script>
 </body>
 
 </html>

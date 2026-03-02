@@ -48,7 +48,9 @@
             <section class="admin-content">
                 <div class="admin-page-header">
                     <h2>Livros</h2>
-                    <button class="btn-primary">+ Novo Livro</button>
+                    <button class="btn-primary" onclick="abrirModalNovoLivro()">
+                        + Novo Livro
+                    </button>
                 </div>
 
                 <div class="admin-filters">
@@ -83,8 +85,10 @@
                                 <td>32</td>
                                 <td><span class="status success">Ativo</span></td>
                                 <td class="admin-actions">
-                                    <button class="btn-link">Editar</button>
-                                    <button class="btn-danger">Excluir</button>
+                                    <button class="btn-link"
+                                        onclick="abrirModalEditarLivro('Clean Code','Tecnologia',129.90,32)">
+                                        Editar
+                                    </button> <button class="btn-danger">Excluir</button>
                                 </td>
                             </tr>
                             <tr>
@@ -95,8 +99,10 @@
                                 <td>0</td>
                                 <td><span class="status danger">Sem Estoque</span></td>
                                 <td class="admin-actions">
-                                    <button class="btn-link">Editar</button>
-                                    <button class="btn-danger">Excluir</button>
+                                    <button class="btn-link"
+                                        onclick="abrirModalEditarLivro('Mindset','Negócios',79.90,0)">
+                                        Editar
+                                    </button> <button class="btn-danger">Excluir</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -110,9 +116,95 @@
                     </div>
                 </div>
             </section>
+        </div>
+    </div>
+    <!-- MODAL NOVO LIVRO -->
+    <div class="admin-modal-overlay" id="novoLivroModal" style="display:none;">
+        <div class="admin-modal">
+
+            <div class="admin-modal-header">
+                <h3>Novo Livro</h3>
+                <button class="modal-close" onclick="fecharModalNovoLivro()">✕</button>
+            </div>
+
+            <div class="admin-modal-body">
+
+                <div class="admin-form-group">
+                    <label>Título</label>
+                    <input type="text" class="admin-input">
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Categoria</label>
+                    <select class="admin-select">
+                        <option>Tecnologia</option>
+                        <option>Negócios</option>
+                        <option>Ficção</option>
+                    </select>
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Preço</label>
+                    <input type="number" class="admin-input">
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Estoque</label>
+                    <input type="number" class="admin-input">
+                </div>
+
+            </div>
+
+            <div class="admin-modal-footer">
+                <button class="btn-secondary btn-sm" onclick="fecharModalNovoLivro()">Cancelar</button>
+                <button class="btn-primary btn-sm">Salvar</button>
+            </div>
 
         </div>
-
     </div>
+    <!-- MODAL EDITAR LIVRO -->
+    <div class="admin-modal-overlay" id="editarLivroModal" style="display:none;">
+        <div class="admin-modal">
 
+            <div class="admin-modal-header">
+                <h3>Editar Livro</h3>
+                <button class="modal-close" onclick="fecharModalEditarLivro()">✕</button>
+            </div>
+
+            <div class="admin-modal-body">
+
+                <div class="admin-form-group">
+                    <label>Título</label>
+                    <input type="text" class="admin-input" id="editarLivroNome">
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Categoria</label>
+                    <select class="admin-select" id="editarLivroCategoria">
+                        <option>Tecnologia</option>
+                        <option>Negócios</option>
+                        <option>Ficção</option>
+                    </select>
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Preço</label>
+                    <input type="number" class="admin-input" id="editarLivroPreco">
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Estoque</label>
+                    <input type="number" class="admin-input" id="editarLivroEstoque">
+                </div>
+
+            </div>
+
+            <div class="admin-modal-footer">
+                <button class="btn-secondary btn-sm" onclick="fecharModalEditarLivro()">Cancelar</button>
+                <button class="btn-primary btn-sm">Salvar</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="../assets/js/admin.js"></script>
 </body>
