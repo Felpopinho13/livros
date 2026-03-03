@@ -121,7 +121,7 @@
    CHECKOUT ADDRESS
 ========================= */
 
-.address-grid {
+.checkout-address-grid {
     display: grid;
     grid-template-columns: 3fr 1fr; /* logradouro maior */
     gap: 18px;
@@ -129,39 +129,39 @@
 }
 
 /* CEP ocupa linha inteira */
-.address-grid input:nth-child(1) {
+.checkout-address-grid input:nth-child(1) {
     grid-column: span 2;
 }
 
 /* Logradouro + Número */
-.address-grid input:nth-child(2) {
+.checkout-address-grid input:nth-child(2) {
     grid-column: span 1;
 }
 
-.address-grid input:nth-child(3) {
+.checkout-address-grid input:nth-child(3) {
     grid-column: span 1;
 }
 
 /* Complemento + Bairro */
-.address-grid input:nth-child(4) {
+.checkout-address-grid input:nth-child(4) {
     grid-column: span 1;
 }
 
-.address-grid input:nth-child(5) {
+.checkout-address-grid input:nth-child(5) {
     grid-column: span 1;
 }
 
 /* Cidade + Estado */
-.address-grid input:nth-child(6) {
+.checkout-address-grid input:nth-child(6) {
     grid-column: span 1;
 }
 
-.address-grid input:nth-child(7) {
+.checkout-address-grid input:nth-child(7) {
     grid-column: span 1;
 }
 
 /* Estética */
-.address-grid input {
+.checkout-address-grid input {
     width: 100%;
     padding: 15px 16px;
     border-radius: 12px;
@@ -171,7 +171,7 @@
     transition: all 0.2s ease;
 }
 
-.address-grid input:focus {
+.checkout-address-grid input:focus {
     border-color: #ff9800;
     box-shadow: 0 0 0 3px rgba(255,152,0,0.15);
     outline: none;
