@@ -84,14 +84,47 @@
                                     <td><span class="status success">Ativo</span></td>
                                     <td>12/01/2026</td>
                                     <td class="admin-actions">
-                                        <button class="btn-link"
-                                            onclick="abrirModalVer('Maria Silva', 'maria@email.com', 'Ativo', '12/01/2026')">
+                                        <button class="btn-link" onclick='abrirModalVer({
+    genero: "Feminino",
+    nome: "Maria Silva",
+    dataNascimento: "1995-05-10",
+    cpf: "123.456.789-00",
+    telefone: { tipo: "Celular", ddd: "11", numero: "999999999" },
+    email: "maria@email.com",
+    endereco: {
+        cep: "08500-000",
+        logradouro: "Rua Exemplo",
+        numero: "123",
+        bairro: "Centro",
+        cidade: "São Paulo",
+        estado: "SP"
+    },
+    status: "Ativo"
+})'>
                                             Ver
                                         </button>
-                                        <button class="btn-link"
-                                            onclick="abrirModalEditar('Maria Silva', 'maria@email.com', 'Ativo')">
+                                        <button class="btn-link" onclick='abrirModalEditar({
+    id: 1,
+    genero: "Feminino",
+    nome: "Maria Silva",
+    dataNascimento: "1995-05-10",
+    cpf: "123.456.789-00",
+    telefone: { tipo: "Celular", ddd: "11", numero: "999999999" },
+    email: "maria@email.com",
+    senha: "123456",
+    endereco: {
+        cep: "08500-000",
+        logradouro: "Rua Exemplo",
+        numero: "123",
+        bairro: "Centro",
+        cidade: "São Paulo",
+        estado: "SP"
+    },
+    status: "Ativo"
+})'>
                                             Editar
-                                        </button> <button class="btn-danger">Desativar</button>
+                                        </button>
+                                        <button class="btn-danger">Desativar</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -112,7 +145,7 @@
 
     <!-- MODAL CLIENTE -->
     <div class="admin-modal-overlay" id="clienteModal" style="display:none;">
-        <div class="admin-modal">
+        <div class="admin-modal large">
 
             <div class="admin-modal-header">
                 <h3>Novo Cliente</h3>
@@ -121,22 +154,110 @@
 
             <div class="admin-modal-body">
 
-                <div class="admin-form-group">
-                    <label>Nome</label>
-                    <input type="text" class="admin-input">
+                <h4>Dados Pessoais</h4>
+
+                <div class="admin-grid-2">
+
+                    <div class="admin-form-group">
+                        <label>Gênero</label>
+                        <select class="admin-select" id="clienteGenero">
+                            <option>Masculino</option>
+                            <option>Feminino</option>
+                            <option>Outro</option>
+                            <option>Prefiro não informar</option>
+                        </select>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Nome Completo</label>
+                        <input type="text" class="admin-input" id="clienteNome">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Data de Nascimento</label>
+                        <input type="date" class="admin-input" id="clienteDataNascimento">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>CPF</label>
+                        <input type="text" class="admin-input" id="clienteCpf">
+                    </div>
+
                 </div>
 
-                <div class="admin-form-group">
-                    <label>Email</label>
-                    <input type="email" class="admin-input">
+                <h4>Contato</h4>
+
+                <div class="admin-grid-3">
+
+                    <div class="admin-form-group">
+                        <label>Tipo</label>
+                        <select class="admin-select" id="clienteTelefoneTipo">
+                            <option>Celular</option>
+                            <option>Residencial</option>
+                            <option>Comercial</option>
+                        </select>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>DDD</label>
+                        <input type="text" class="admin-input" id="clienteTelefoneDDD">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Número</label>
+                        <input type="text" class="admin-input" id="clienteTelefoneNumero">
+                    </div>
+
                 </div>
 
-                <div class="admin-form-group">
-                    <label>Status</label>
-                    <select class="admin-select">
-                        <option>Ativo</option>
-                        <option>Inativo</option>
-                    </select>
+                <div class="admin-grid-2">
+
+                    <div class="admin-form-group">
+                        <label>Email</label>
+                        <input type="email" class="admin-input" id="clienteEmail">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Senha</label>
+                        <input type="password" class="admin-input" id="clienteSenha">
+                    </div>
+
+                </div>
+
+                <h4>Endereço Residencial</h4>
+
+                <div class="admin-grid-2">
+
+                    <div class="admin-form-group">
+                        <label>CEP</label>
+                        <input type="text" class="admin-input" id="clienteCep">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Logradouro</label>
+                        <input type="text" class="admin-input" id="clienteLogradouro">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Número</label>
+                        <input type="text" class="admin-input" id="clienteNumero">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Bairro</label>
+                        <input type="text" class="admin-input" id="clienteBairro">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Cidade</label>
+                        <input type="text" class="admin-input" id="clienteCidade">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Estado</label>
+                        <input type="text" class="admin-input" id="clienteEstado">
+                    </div>
+
                 </div>
 
             </div>
@@ -145,7 +266,7 @@
                 <button class="btn-secondary btn-sm" onclick="fecharModalCliente()">
                     Cancelar
                 </button>
-                <button class="btn-primary btn-sm" onclick="fecharModal()">Salvar</button>
+                <button class="btn-primary btn-sm" onclick="salvarCliente()">Salvar</button>
             </div>
 
         </div>
@@ -153,7 +274,7 @@
 
     <!-- MODAL VER CLIENTE -->
     <div class="admin-modal-overlay" id="verClienteModal" style="display:none;">
-        <div class="admin-modal">
+        <div class="admin-modal large">
 
             <div class="admin-modal-header">
                 <h3>Detalhes do Cliente</h3>
@@ -162,24 +283,93 @@
 
             <div class="admin-modal-body">
 
-                <div class="admin-form-group">
-                    <label>Nome</label>
-                    <input type="text" class="admin-input" id="verNome" disabled>
+                <h4>Dados Pessoais</h4>
+
+                <div class="admin-grid-2">
+                    <div class="admin-form-group">
+                        <label>Gênero</label>
+                        <input type="text" class="admin-input" id="verGenero" disabled>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Nome Completo</label>
+                        <input type="text" class="admin-input" id="verNome" disabled>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Data de Nascimento</label>
+                        <input type="text" class="admin-input" id="verDataNascimento" disabled>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>CPF</label>
+                        <input type="text" class="admin-input" id="verCpf" disabled>
+                    </div>
                 </div>
 
-                <div class="admin-form-group">
-                    <label>Email</label>
-                    <input type="text" class="admin-input" id="verEmail" disabled>
+                <h4>Contato</h4>
+
+                <div class="admin-grid-3">
+                    <div class="admin-form-group">
+                        <label>Tipo</label>
+                        <input type="text" class="admin-input" id="verTelefoneTipo" disabled>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>DDD</label>
+                        <input type="text" class="admin-input" id="verTelefoneDDD" disabled>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Número</label>
+                        <input type="text" class="admin-input" id="verTelefoneNumero" disabled>
+                    </div>
                 </div>
 
-                <div class="admin-form-group">
-                    <label>Status</label>
-                    <input type="text" class="admin-input" id="verStatus" disabled>
+                <div class="admin-grid-2">
+                    <div class="admin-form-group">
+                        <label>Email</label>
+                        <input type="text" class="admin-input" id="verEmail" disabled>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Status</label>
+                        <input type="text" class="admin-input" id="verStatus" disabled>
+                    </div>
                 </div>
 
-                <div class="admin-form-group">
-                    <label>Data Cadastro</label>
-                    <input type="text" class="admin-input" id="verData" disabled>
+                <h4>Endereço Residencial</h4>
+
+                <div class="admin-grid-2">
+                    <div class="admin-form-group">
+                        <label>CEP</label>
+                        <input type="text" class="admin-input" id="verCep" disabled>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Logradouro</label>
+                        <input type="text" class="admin-input" id="verLogradouro" disabled>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Número</label>
+                        <input type="text" class="admin-input" id="verNumero" disabled>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Bairro</label>
+                        <input type="text" class="admin-input" id="verBairro" disabled>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Cidade</label>
+                        <input type="text" class="admin-input" id="verCidade" disabled>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Estado</label>
+                        <input type="text" class="admin-input" id="verEstado" disabled>
+                    </div>
                 </div>
 
             </div>
@@ -193,7 +383,7 @@
 
     <!-- MODAL EDITAR CLIENTE -->
     <div class="admin-modal-overlay" id="editarClienteModal" style="display:none;">
-        <div class="admin-modal">
+        <div class="admin-modal large">
 
             <div class="admin-modal-header">
                 <h3>Editar Cliente</h3>
@@ -202,18 +392,117 @@
 
             <div class="admin-modal-body">
 
-                <div class="admin-form-group">
-                    <label>Nome</label>
-                    <input type="text" class="admin-input" id="editarNome">
+                <input type="hidden" id="editarClienteId">
+
+                <h4>Dados Pessoais</h4>
+
+                <div class="admin-grid-2">
+
+                    <div class="admin-form-group">
+                        <label>Gênero</label>
+                        <select class="admin-select" id="editarGenero">
+                            <option>Masculino</option>
+                            <option>Feminino</option>
+                            <option>Outro</option>
+                            <option>Prefiro não informar</option>
+                        </select>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Nome Completo</label>
+                        <input type="text" class="admin-input" id="editarNome">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Data de Nascimento</label>
+                        <input type="date" class="admin-input" id="editarDataNascimento">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>CPF</label>
+                        <input type="text" class="admin-input" id="editarCpf">
+                    </div>
+
                 </div>
 
-                <div class="admin-form-group">
-                    <label>Email</label>
-                    <input type="email" class="admin-input" id="editarEmail">
+                <h4>Contato</h4>
+
+                <div class="admin-grid-3">
+
+                    <div class="admin-form-group">
+                        <label>Tipo</label>
+                        <select class="admin-select" id="editarTelefoneTipo">
+                            <option>Celular</option>
+                            <option>Residencial</option>
+                            <option>Comercial</option>
+                        </select>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>DDD</label>
+                        <input type="text" class="admin-input" id="editarTelefoneDDD">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Número</label>
+                        <input type="text" class="admin-input" id="editarTelefoneNumero">
+                    </div>
+
                 </div>
 
+                <div class="admin-grid-2">
+
+                    <div class="admin-form-group">
+                        <label>Email</label>
+                        <input type="email" class="admin-input" id="editarEmail">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Senha</label>
+                        <input type="password" class="admin-input" id="editarSenha">
+                    </div>
+
+                </div>
+
+                <h4>Endereço Residencial</h4>
+
+                <div class="admin-grid-2">
+
+                    <div class="admin-form-group">
+                        <label>CEP</label>
+                        <input type="text" class="admin-input" id="editarCep">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Logradouro</label>
+                        <input type="text" class="admin-input" id="editarLogradouro">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Número</label>
+                        <input type="text" class="admin-input" id="editarNumero">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Bairro</label>
+                        <input type="text" class="admin-input" id="editarBairro">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Cidade</label>
+                        <input type="text" class="admin-input" id="editarCidade">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Estado</label>
+                        <input type="text" class="admin-input" id="editarEstado">
+                    </div>
+
+                </div>
+
+                <h4>Status</h4>
+
                 <div class="admin-form-group">
-                    <label>Status</label>
                     <select class="admin-select" id="editarStatus">
                         <option>Ativo</option>
                         <option>Inativo</option>
@@ -224,7 +513,7 @@
 
             <div class="admin-modal-footer">
                 <button class="btn-secondary btn-sm" onclick="fecharModalEditar()">Cancelar</button>
-                <button class="btn-primary btn-sm">Salvar</button>
+                <button class="btn-primary btn-sm" onclick="salvarEdicaoCliente()">Salvar</button>
             </div>
 
         </div>

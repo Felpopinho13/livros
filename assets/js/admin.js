@@ -14,13 +14,28 @@ function fecharModalCliente() {
 // MODAL VER CLIENTE
 // ===============================
 
-function abrirModalVer(nome, email, status, data) {
-    document.getElementById('verNome').value = nome;
-    document.getElementById('verEmail').value = email;
-    document.getElementById('verStatus').value = status;
-    document.getElementById('verData').value = data;
+function abrirModalVer(cliente) {
 
-    document.getElementById('verClienteModal').style.display = 'flex';
+    document.getElementById("verGenero").value = cliente.genero;
+    document.getElementById("verNome").value = cliente.nome;
+    document.getElementById("verDataNascimento").value = cliente.dataNascimento;
+    document.getElementById("verCpf").value = cliente.cpf;
+
+    document.getElementById("verTelefoneTipo").value = cliente.telefone.tipo;
+    document.getElementById("verTelefoneDDD").value = cliente.telefone.ddd;
+    document.getElementById("verTelefoneNumero").value = cliente.telefone.numero;
+
+    document.getElementById("verEmail").value = cliente.email;
+    document.getElementById("verStatus").value = cliente.status;
+
+    document.getElementById("verCep").value = cliente.endereco.cep;
+    document.getElementById("verLogradouro").value = cliente.endereco.logradouro;
+    document.getElementById("verNumero").value = cliente.endereco.numero;
+    document.getElementById("verBairro").value = cliente.endereco.bairro;
+    document.getElementById("verCidade").value = cliente.endereco.cidade;
+    document.getElementById("verEstado").value = cliente.endereco.estado;
+
+    document.getElementById("verClienteModal").style.display = "flex";
 }
 
 function fecharModalVer() {
@@ -31,12 +46,31 @@ function fecharModalVer() {
 // MODAL EDITAR CLIENTE
 // ===============================
 
-function abrirModalEditar(nome, email, status) {
-    document.getElementById('editarNome').value = nome;
-    document.getElementById('editarEmail').value = email;
-    document.getElementById('editarStatus').value = status;
+function abrirModalEditar(cliente) {
 
-    document.getElementById('editarClienteModal').style.display = 'flex';
+    document.getElementById("editarClienteId").value = cliente.id;
+    document.getElementById("editarGenero").value = cliente.genero;
+    document.getElementById("editarNome").value = cliente.nome;
+    document.getElementById("editarDataNascimento").value = cliente.dataNascimento;
+    document.getElementById("editarCpf").value = cliente.cpf;
+
+    document.getElementById("editarTelefoneTipo").value = cliente.telefone.tipo;
+    document.getElementById("editarTelefoneDDD").value = cliente.telefone.ddd;
+    document.getElementById("editarTelefoneNumero").value = cliente.telefone.numero;
+
+    document.getElementById("editarEmail").value = cliente.email;
+    document.getElementById("editarSenha").value = cliente.senha;
+
+    document.getElementById("editarCep").value = cliente.endereco.cep;
+    document.getElementById("editarLogradouro").value = cliente.endereco.logradouro;
+    document.getElementById("editarNumero").value = cliente.endereco.numero;
+    document.getElementById("editarBairro").value = cliente.endereco.bairro;
+    document.getElementById("editarCidade").value = cliente.endereco.cidade;
+    document.getElementById("editarEstado").value = cliente.endereco.estado;
+
+    document.getElementById("editarStatus").value = cliente.status;
+
+    document.getElementById("editarClienteModal").style.display = "flex";
 }
 
 function fecharModalEditar() {
@@ -250,4 +284,62 @@ function salvarLivro() {
     console.log(livro);
 }
 
+function salvarCliente() {
 
+    const cliente = {
+        genero: document.getElementById("clienteGenero").value,
+        nome: document.getElementById("clienteNome").value,
+        dataNascimento: document.getElementById("clienteDataNascimento").value,
+        cpf: document.getElementById("clienteCpf").value,
+        telefone: {
+            tipo: document.getElementById("clienteTelefoneTipo").value,
+            ddd: document.getElementById("clienteTelefoneDDD").value,
+            numero: document.getElementById("clienteTelefoneNumero").value
+        },
+        email: document.getElementById("clienteEmail").value,
+        senha: document.getElementById("clienteSenha").value,
+        endereco: {
+            cep: document.getElementById("clienteCep").value,
+            logradouro: document.getElementById("clienteLogradouro").value,
+            numero: document.getElementById("clienteNumero").value,
+            bairro: document.getElementById("clienteBairro").value,
+            cidade: document.getElementById("clienteCidade").value,
+            estado: document.getElementById("clienteEstado").value
+        }
+    };
+
+    console.log("Novo cliente:", cliente);
+
+    fecharModalCliente();
+}
+
+function salvarEdicaoCliente() {
+
+    const clienteEditado = {
+        id: document.getElementById("editarClienteId").value,
+        genero: document.getElementById("editarGenero").value,
+        nome: document.getElementById("editarNome").value,
+        dataNascimento: document.getElementById("editarDataNascimento").value,
+        cpf: document.getElementById("editarCpf").value,
+        telefone: {
+            tipo: document.getElementById("editarTelefoneTipo").value,
+            ddd: document.getElementById("editarTelefoneDDD").value,
+            numero: document.getElementById("editarTelefoneNumero").value
+        },
+        email: document.getElementById("editarEmail").value,
+        senha: document.getElementById("editarSenha").value,
+        endereco: {
+            cep: document.getElementById("editarCep").value,
+            logradouro: document.getElementById("editarLogradouro").value,
+            numero: document.getElementById("editarNumero").value,
+            bairro: document.getElementById("editarBairro").value,
+            cidade: document.getElementById("editarCidade").value,
+            estado: document.getElementById("editarEstado").value
+        },
+        status: document.getElementById("editarStatus").value
+    };
+
+    console.log("Cliente editado:", clienteEditado);
+
+    fecharModalEditar();
+}
