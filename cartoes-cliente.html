@@ -71,5 +71,31 @@
             </div>
         </div>
     </section>
+    <!-- MODAL NOVO CARTÃO -->
+    <div class="modal-overlay" id="cardModal">
+        <div class="modal">
+
+            <h3>Novo Cartão</h3>
+
+            <form id="cardForm">
+
+                <input type="text" name="nome" placeholder="Nome impresso no cartão" required>
+                <input type="text" name="numero" placeholder="Número do cartão" maxlength="19" required>
+
+                <div class="form-row">
+                    <input type="text" name="validade" placeholder="Validade (MM/AA)" maxlength="5" required>
+                    <input type="text" name="cvv" placeholder="CVV" maxlength="4" required>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="closeCardModal" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-primary">Salvar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script src="assets/js/cartoes.js"></script>
 </body>
+
 </html>

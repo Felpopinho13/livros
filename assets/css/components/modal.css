@@ -131,6 +131,15 @@
     transform: scale(1.2);
 }
 
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row input {
+    flex: 1;
+}
+
 @keyframes modalFade {
     from {
         transform: scale(0.95);
