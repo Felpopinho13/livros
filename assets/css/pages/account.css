@@ -17,7 +17,7 @@
     border-radius: var(--radius-lg);
     background: var(--color-white);
     border: 1px solid #e5e7eb;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
     margin-left: 15px;
 }
 
@@ -30,7 +30,7 @@
     border-radius: var(--radius-lg);
     background: var(--color-white);
     border: 1px solid #e5e7eb;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
     margin-right: 15px;
 }
 
@@ -60,14 +60,16 @@
 
 /* Hover */
 .account-menu a:hover {
-    background: #232f3e; /* azul escuro */
+    background: #232f3e;
+    /* azul escuro */
     color: white;
     border-color: #232f3e;
 }
 
 /* Item ativo */
 .account-menu a.active {
-    background: #ffa41c; /* laranja da sua paleta */
+    background: #ffa41c;
+    /* laranja da sua paleta */
     color: white;
     border-color: #ffa41c;
 }
@@ -121,7 +123,7 @@
 }
 
 .address-card:hover {
-    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
 }
 
 .address-card.primary {
@@ -210,7 +212,7 @@
 
 .wallet-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
@@ -223,7 +225,7 @@
 }
 
 .wallet-card:hover {
-    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
 }
 
 .wallet-card.primary {
@@ -291,7 +293,7 @@
     border: 1px solid #e5e7eb;
     max-width: 700px;
     width: 100%;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
 }
 
 .exchange-container h2 {
@@ -374,7 +376,7 @@
     max-width: 500px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .success-icon {
@@ -581,4 +583,3 @@
     justify-content: flex-end;
     gap: 15px;
 }
-

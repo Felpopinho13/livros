@@ -7,71 +7,101 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<header class="header">
-    <div class="container">
-        <a href="index.html" class="logo">BookStore</a>
 
-        <form class="search-box" action="resultados-busca.html" method="GET">
-            <input type="text" name="q" placeholder="Buscar livros..." class="input">
-            <button type="submit">🔍</button>
-        </form>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">BookStore</a>
 
-        <nav class="nav-icons">
-            <a href="index.html">🏠</a>
-            <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
-            <a href="area-cliente.html">👤</a>
-            <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
-        </nav>
-    </div>
-</header>
-<section class="orders-page">
-    <div class="container">
+            <form class="search-box" action="resultados-busca.html" method="GET">
+                <input type="text" name="q" placeholder="Buscar livros..." class="input">
+                <button type="submit">🔍</button>
+            </form>
 
-        <h2>Seus pedidos</h2>
+            <nav class="nav-icons">
+                <a href="index.html">🏠</a>
+                <a href="carrinho.html">🛒 <span id="cart-count">0</span></a>
+                <a href="area-cliente.html">👤</a>
+                <a href="admin/admin-dashboard.html" class="admin-icon">⚙</a>
+            </nav>
+        </div>
+    </header>
+    <section class="orders-page">
+        <div class="container">
 
-        <div class="order-card card">
+            <h2>Seus pedidos</h2>
 
-            <div class="order-header">
-                <div>
-                    <span class="label">Pedido realizado</span>
-                    <strong>25 de fevereiro de 2026</strong>
+            <div class="order-card card">
+
+                <div class="order-header">
+                    <div>
+                        <span class="label">Pedido realizado</span>
+                        <strong>25 de fevereiro de 2026</strong>
+                    </div>
+
+                    <div>
+                        <span class="label">Total</span>
+                        <strong>R$ 74,90</strong>
+                    </div>
+
+                    <div>
+                        <span class="label">Pedido nº</span>
+                        <strong>#123456</strong>
+                    </div>
                 </div>
 
-                <div>
-                    <span class="label">Total</span>
-                    <strong>R$ 74,90</strong>
-                </div>
+                <div class="order-body">
 
-                <div>
-                    <span class="label">Pedido nº</span>
-                    <strong>#123456</strong>
-                </div>
-            </div>
+                    <img src="assets/img/1984.jpg" alt="Livro 1984">
 
-            <div class="order-body">
+                    <div class="order-info">
+                        <h3>1984 - George Orwell</h3>
 
-                <img src="assets/img/1984.jpg" alt="Livro 1984">
+                        <p class="status processing">
+                            Em processamento
+                        </p>
 
-                <div class="order-info">
-                    <h3>1984 - George Orwell</h3>
+                        <div class="order-buttons">
+                            <a href="pedido-detalhe.html" class="btn btn-secondary">
+                                Ver detalhes
+                            </a>
 
-                    <p class="status processing">
-                        Em processamento
-                    </p>
-
-                    <div class="order-buttons">
-                        <a href="pedido-detalhe.html"
-                           class="btn btn-secondary">
-                            Ver detalhes
-                        </a>
-
-                        <a href="index.html"
-                           class="btn btn-primary">
-                            Comprar novamente
-                        </a>
+                            <a href="index.html" class="btn btn-primary">
+                                Comprar novamente
+                            </a>
+                            <button class="btn btn-outline btn-sm btn-avaliar" data-id="1" data-titulo="1984">
+                                Avaliar
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    <div class="modal-overlay" id="reviewModal">
+        <div class="modal">
+            <h3 id="reviewTitle"></h3>
+
+            <select id="reviewRating">
+                <option value="5">⭐⭐⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="1">⭐</option>
+            </select>
+
+            <textarea id="reviewComment" placeholder="Escreva seu comentário..." rows="4"></textarea>
+
+            <button id="submitReview" class="btn-primary">
+                Enviar Avaliação
+            </button>
+
+            <button id="closeReview" class="btn-secondary">
+                Cancelar
+            </button>
+        </div>
     </div>
-</section>
+    <script src="assets/js/review.js"></script>
+</body>
+
+</html>
