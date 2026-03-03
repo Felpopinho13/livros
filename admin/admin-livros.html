@@ -68,9 +68,11 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Livro</th>
+                                <th>Título</th>
+                                <th>Autor</th>
                                 <th>Categoria</th>
-                                <th>Preço</th>
+                                <th>ISBN</th>
+                                <th>Grupo</th>
                                 <th>Estoque</th>
                                 <th>Status</th>
                                 <th>Ações</th>
@@ -80,29 +82,50 @@
                             <tr>
                                 <td>10</td>
                                 <td>Clean Code</td>
+                                <td>Robert C. Martin</td>
                                 <td>Tecnologia</td>
-                                <td>R$ 129,90</td>
+                                <td>9780132350884</td>
+                                <td>Premium</td>
                                 <td>32</td>
                                 <td><span class="status success">Ativo</span></td>
                                 <td class="admin-actions">
-                                    <button class="btn-link"
-                                        onclick="abrirModalEditarLivro('Clean Code','Tecnologia',129.90,32)">
+                                    <button class="btn-link" onclick="abrirModalEditarLivro(
+                    10,
+                    'Clean Code',
+                    'Robert C. Martin',
+                    'Tecnologia',
+                    '9780132350884',
+                    'Premium',
+                    32
+                )">
                                         Editar
-                                    </button> <button class="btn-danger">Excluir</button>
+                                    </button>
+                                    <button class="btn-danger">Excluir</button>
                                 </td>
                             </tr>
+
                             <tr>
                                 <td>11</td>
                                 <td>Mindset</td>
+                                <td>Carol S. Dweck</td>
                                 <td>Negócios</td>
-                                <td>R$ 79,90</td>
+                                <td>9780345472328</td>
+                                <td>Padrão</td>
                                 <td>0</td>
                                 <td><span class="status danger">Sem Estoque</span></td>
                                 <td class="admin-actions">
-                                    <button class="btn-link"
-                                        onclick="abrirModalEditarLivro('Mindset','Negócios',79.90,0)">
+                                    <button class="btn-link" onclick="abrirModalEditarLivro(
+                    11,
+                    'Mindset',
+                    'Carol S. Dweck',
+                    'Negócios',
+                    '9780345472328',
+                    'Padrão',
+                    0
+                )">
                                         Editar
-                                    </button> <button class="btn-danger">Excluir</button>
+                                    </button>
+                                    <button class="btn-danger">Excluir</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -118,9 +141,10 @@
             </section>
         </div>
     </div>
+
     <!-- MODAL NOVO LIVRO -->
     <div class="admin-modal-overlay" id="novoLivroModal" style="display:none;">
-        <div class="admin-modal">
+        <div class="admin-modal large">
 
             <div class="admin-modal-header">
                 <h3>Novo Livro</h3>
@@ -129,42 +153,130 @@
 
             <div class="admin-modal-body">
 
-                <div class="admin-form-group">
-                    <label>Título</label>
-                    <input type="text" class="admin-input">
+                <!-- DADOS BÁSICOS -->
+                <h4>Informações Básicas</h4>
+
+                <div class="admin-grid-2">
+
+                    <div class="admin-form-group">
+                        <label>Título</label>
+                        <input type="text" class="admin-input" id="livroTitulo">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Autor</label>
+                        <input type="text" class="admin-input" id="livroAutor">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Categoria</label>
+                        <select class="admin-select" id="livroCategoria">
+                            <option>Ficção</option>
+                            <option>Tecnologia</option>
+                            <option>Negócios</option>
+                        </select>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Ano</label>
+                        <input type="number" class="admin-input" id="livroAno">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Editora</label>
+                        <input type="text" class="admin-input" id="livroEditora">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Edição</label>
+                        <input type="text" class="admin-input" id="livroEdicao">
+                    </div>
+
+                </div>
+
+                <!-- IDENTIFICAÇÃO -->
+                <h4>Identificação</h4>
+
+                <div class="admin-grid-2">
+
+                    <div class="admin-form-group">
+                        <label>ISBN</label>
+                        <input type="text" class="admin-input" id="livroISBN">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Código de Barras</label>
+                        <input type="text" class="admin-input" id="livroCodigoBarras">
+                    </div>
+
+                </div>
+
+                <!-- DETALHES FÍSICOS -->
+                <h4>Detalhes Físicos</h4>
+
+                <div class="admin-grid-4">
+
+                    <div class="admin-form-group">
+                        <label>Altura (cm)</label>
+                        <input type="number" class="admin-input" id="livroAltura">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Largura (cm)</label>
+                        <input type="number" class="admin-input" id="livroLargura">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Profundidade (cm)</label>
+                        <input type="number" class="admin-input" id="livroProfundidade">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Peso (kg)</label>
+                        <input type="number" step="0.01" class="admin-input" id="livroPeso">
+                    </div>
+
+                </div>
+
+                <!-- OUTROS -->
+                <h4>Outros</h4>
+
+                <div class="admin-grid-2">
+
+                    <div class="admin-form-group">
+                        <label>Número de Páginas</label>
+                        <input type="number" class="admin-input" id="livroPaginas">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Grupo de Precificação</label>
+                        <select class="admin-select" id="livroGrupoPrecificacao">
+                            <option>Padrão</option>
+                            <option>Premium</option>
+                            <option>Promoção</option>
+                        </select>
+                    </div>
+
                 </div>
 
                 <div class="admin-form-group">
-                    <label>Categoria</label>
-                    <select class="admin-select">
-                        <option>Tecnologia</option>
-                        <option>Negócios</option>
-                        <option>Ficção</option>
-                    </select>
-                </div>
-
-                <div class="admin-form-group">
-                    <label>Preço</label>
-                    <input type="number" class="admin-input">
-                </div>
-
-                <div class="admin-form-group">
-                    <label>Estoque</label>
-                    <input type="number" class="admin-input">
+                    <label>Sinopse</label>
+                    <textarea class="admin-input" rows="4" id="livroSinopse"></textarea>
                 </div>
 
             </div>
 
             <div class="admin-modal-footer">
                 <button class="btn-secondary btn-sm" onclick="fecharModalNovoLivro()">Cancelar</button>
-                <button class="btn-primary btn-sm">Salvar</button>
+                <button class="btn-primary btn-sm" onclick="salvarLivro()">Salvar</button>
             </div>
 
         </div>
     </div>
+
     <!-- MODAL EDITAR LIVRO -->
     <div class="admin-modal-overlay" id="editarLivroModal" style="display:none;">
-        <div class="admin-modal">
+        <div class="admin-modal large">
 
             <div class="admin-modal-header">
                 <h3>Editar Livro</h3>
@@ -173,38 +285,134 @@
 
             <div class="admin-modal-body">
 
-                <div class="admin-form-group">
-                    <label>Título</label>
-                    <input type="text" class="admin-input" id="editarLivroNome">
+                <input type="hidden" id="editarLivroId">
+
+                <!-- INFORMAÇÕES BÁSICAS -->
+                <h4>Informações Básicas</h4>
+
+                <div class="admin-grid-2">
+
+                    <div class="admin-form-group">
+                        <label>Título</label>
+                        <input type="text" class="admin-input" id="editarLivroTitulo">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Autor</label>
+                        <input type="text" class="admin-input" id="editarLivroAutor">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Categoria</label>
+                        <select class="admin-select" id="editarLivroCategoria">
+                            <option>Ficção</option>
+                            <option>Tecnologia</option>
+                            <option>Negócios</option>
+                        </select>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Ano</label>
+                        <input type="number" class="admin-input" id="editarLivroAno">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Editora</label>
+                        <input type="text" class="admin-input" id="editarLivroEditora">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Edição</label>
+                        <input type="text" class="admin-input" id="editarLivroEdicao">
+                    </div>
+
+                </div>
+
+                <!-- IDENTIFICAÇÃO -->
+                <h4>Identificação</h4>
+
+                <div class="admin-grid-2">
+
+                    <div class="admin-form-group">
+                        <label>ISBN</label>
+                        <input type="text" class="admin-input" id="editarLivroISBN">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Código de Barras</label>
+                        <input type="text" class="admin-input" id="editarLivroCodigoBarras">
+                    </div>
+
+                </div>
+
+                <!-- DETALHES FÍSICOS -->
+                <h4>Detalhes Físicos</h4>
+
+                <div class="admin-grid-4">
+
+                    <div class="admin-form-group">
+                        <label>Altura (cm)</label>
+                        <input type="number" class="admin-input" id="editarLivroAltura">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Largura (cm)</label>
+                        <input type="number" class="admin-input" id="editarLivroLargura">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Profundidade (cm)</label>
+                        <input type="number" class="admin-input" id="editarLivroProfundidade">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Peso (kg)</label>
+                        <input type="number" step="0.01" class="admin-input" id="editarLivroPeso">
+                    </div>
+
+                </div>
+
+                <!-- OUTROS -->
+                <h4>Outros</h4>
+
+                <div class="admin-grid-2">
+
+                    <div class="admin-form-group">
+                        <label>Número de Páginas</label>
+                        <input type="number" class="admin-input" id="editarLivroPaginas">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Grupo de Precificação</label>
+                        <select class="admin-select" id="editarLivroGrupo">
+                            <option>Padrão</option>
+                            <option>Premium</option>
+                            <option>Promoção</option>
+                        </select>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Estoque</label>
+                        <input type="number" class="admin-input" id="editarLivroEstoque">
+                    </div>
+
                 </div>
 
                 <div class="admin-form-group">
-                    <label>Categoria</label>
-                    <select class="admin-select" id="editarLivroCategoria">
-                        <option>Tecnologia</option>
-                        <option>Negócios</option>
-                        <option>Ficção</option>
-                    </select>
-                </div>
-
-                <div class="admin-form-group">
-                    <label>Preço</label>
-                    <input type="number" class="admin-input" id="editarLivroPreco">
-                </div>
-
-                <div class="admin-form-group">
-                    <label>Estoque</label>
-                    <input type="number" class="admin-input" id="editarLivroEstoque">
+                    <label>Sinopse</label>
+                    <textarea class="admin-input" rows="4" id="editarLivroSinopse"></textarea>
                 </div>
 
             </div>
 
             <div class="admin-modal-footer">
                 <button class="btn-secondary btn-sm" onclick="fecharModalEditarLivro()">Cancelar</button>
-                <button class="btn-primary btn-sm">Salvar</button>
+                <button class="btn-primary btn-sm" onclick="salvarEdicaoLivro()">Salvar</button>
             </div>
 
         </div>
     </div>
+
+
     <script src="../assets/js/admin.js"></script>
 </body>

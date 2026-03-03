@@ -59,13 +59,17 @@ function fecharModalNovoLivro() {
 // MODAL EDITAR LIVRO
 // ===============================
 
-function abrirModalEditarLivro(titulo, categoria, preco, estoque) {
-    document.getElementById('editarLivroNome').value = titulo;
-    document.getElementById('editarLivroCategoria').value = categoria;
-    document.getElementById('editarLivroPreco').value = preco;
-    document.getElementById('editarLivroEstoque').value = estoque;
+function abrirModalEditarLivro(id, titulo, autor, categoria, isbn, grupo, estoque) {
 
-    document.getElementById('editarLivroModal').style.display = 'flex';
+    document.getElementById("editarLivroId").value = id;
+    document.getElementById("editarLivroTitulo").value = titulo;
+    document.getElementById("editarLivroAutor").value = autor;
+    document.getElementById("editarLivroCategoria").value = categoria;
+    document.getElementById("editarLivroISBN").value = isbn;
+    document.getElementById("editarLivroGrupo").value = grupo;
+    document.getElementById("editarLivroEstoque").value = estoque;
+
+    document.getElementById("editarLivroModal").style.display = "flex";
 }
 
 function fecharModalEditarLivro() {
@@ -169,51 +173,81 @@ function fecharModalVerTroca() {
 
 const ctx = document.getElementById('salesChart');
 
-// Dados iniciais mockados
-let salesChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['2026-01-01', '2026-01-02'],
-        datasets: [{
-            label: 'Faturamento (R$)',
-            data: [15000, 21000],
-            borderColor: '#ff9900',
-            backgroundColor: 'rgba(255,153,0,0.1)',
-            borderWidth: 3,
-            tension: 0.3,
-            fill: true,
-            pointRadius: 5,
-            pointBackgroundColor: '#ff9900'
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: { display: false }
+if (ctx && typeof Chart !== "undefined") {
+
+    let salesChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['2026-01-01', '2026-01-02'],
+            datasets: [{
+                label: 'Faturamento (R$)',
+                data: [15000, 21000],
+                borderColor: '#ff9900',
+                backgroundColor: 'rgba(255,153,0,0.1)',
+                borderWidth: 3,
+                tension: 0.3,
+                fill: true,
+                pointRadius: 5,
+                pointBackgroundColor: '#ff9900'
+            }]
         },
-        scales: {
-            y: { beginAtZero: true }
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true } }
         }
+    });
+
+    const btnFiltrar = document.getElementById("btnFiltrar");
+
+    if (btnFiltrar) {
+
+        btnFiltrar.addEventListener("click", function () {
+
+            const inicio = document.getElementById("dataInicio").value;
+            const fim = document.getElementById("dataFim").value;
+
+            if (!inicio || !fim) {
+                alert("Selecione as duas datas.");
+                return;
+            }
+
+            const valor1 = Math.floor(Math.random() * 20000) + 10000;
+            const valor2 = Math.floor(Math.random() * 20000) + 10000;
+
+            salesChart.data.labels = [inicio, fim];
+            salesChart.data.datasets[0].data = [valor1, valor2];
+
+            salesChart.update();
+        });
+
     }
-});
 
-// Evento do botão Filtrar
-document.getElementById("btnFiltrar").addEventListener("click", function () {
+}
 
-    const inicio = document.getElementById("dataInicio").value;
-    const fim = document.getElementById("dataFim").value;
+function salvarLivro() {
 
-    if (!inicio || !fim) {
-        alert("Selecione as duas datas.");
-        return;
-    }
+    const livro = {
+        titulo: document.getElementById("livroTitulo").value,
+        autor: document.getElementById("livroAutor").value,
+        categoria: document.getElementById("livroCategoria").value,
+        ano: document.getElementById("livroAno").value,
+        editora: document.getElementById("livroEditora").value,
+        edicao: document.getElementById("livroEdicao").value,
+        isbn: document.getElementById("livroISBN").value,
+        codigoBarras: document.getElementById("livroCodigoBarras").value,
+        paginas: document.getElementById("livroPaginas").value,
+        sinopse: document.getElementById("livroSinopse").value,
+        dimensoes: {
+            altura: document.getElementById("livroAltura").value,
+            largura: document.getElementById("livroLargura").value,
+            profundidade: document.getElementById("livroProfundidade").value,
+            peso: document.getElementById("livroPeso").value
+        },
+        grupoPrecificacao: document.getElementById("livroGrupoPrecificacao").value
+    };
 
-    // MOCK: gerar valores aleatórios só para demonstração
-    const valor1 = Math.floor(Math.random() * 20000) + 10000;
-    const valor2 = Math.floor(Math.random() * 20000) + 10000;
+    console.log(livro);
+}
 
-    salesChart.data.labels = [inicio, fim];
-    salesChart.data.datasets[0].data = [valor1, valor2];
 
-    salesChart.update();
-});
