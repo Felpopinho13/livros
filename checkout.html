@@ -33,6 +33,29 @@
       <div class="checkout-layout">
 
         <div class="checkout-form">
+          <h3>Endereço de Entrega</h3>
+
+          <div class="address-grid">
+
+            <div class="address-card selected">
+              <strong>Felipi Pereira</strong>
+              <p>Rua Exemplo, 123</p>
+              <p>Itaquaquecetuba - SP</p>
+              <p>CEP: 08500-000</p>
+
+              <span class="select-address-btn">Selecionar</span>
+            </div>
+
+            <div class="address-card">
+              <strong>Casa</strong>
+              <p>Av. Paulista, 1000</p>
+              <p>São Paulo - SP</p>
+              <p>CEP: 01310-000</p>
+
+              <span class="select-address-btn">Selecionar</span>
+            </div>
+
+          </div>
 
           <div class="card checkout-card">
             <div class="checkout-address-grid">
@@ -87,12 +110,57 @@
 
             <!-- CARTÃO -->
             <div class="payment-form" id="cartaoForm">
-              <input type="text" placeholder="Número do Cartão">
-              <input type="text" placeholder="Nome impresso no cartão">
-              <input type="text" placeholder="Código de segurança (CVV)">
-              <input type="text" placeholder="Validade (MM/AA)">
-              <input type="email" placeholder="Email">
-              <input type="date" placeholder="Data de nascimento">
+              <h4>Cartões cadastrados</h4>
+
+              <div class="credit-card-grid">
+
+                <div class="credit-card selected">
+                  <div class="card-flag">💳</div>
+
+                  <div class="card-info">
+                    <strong>Visa</strong>
+                    <p>**** **** **** 4587</p>
+                    <span>Felipi Pereira</span>
+                    <small>Validade 12/28</small>
+                  </div>
+
+                  <span class="select-card-btn">Selecionar</span>
+                </div>
+
+
+                <div class="credit-card">
+                  <div class="card-flag">💳</div>
+
+                  <div class="card-info">
+                    <strong>Mastercard</strong>
+                    <p>**** **** **** 9921</p>
+                    <span>Felipi Pereira</span>
+                    <small>Validade 08/27</small>
+                  </div>
+
+                  <span class="select-card-btn">Selecionar</span>
+                </div>
+
+              </div>
+              
+              <div class="new-card-form">
+                <h4>Ou usar novo cartão</h4>
+
+                <input type="text" placeholder="Número do Cartão">
+
+                <div class="card-grid-2">
+                  <input type="text" placeholder="Nome impresso no cartão">
+                  <input type="text" placeholder="Código de segurança (CVV)">
+                </div>
+
+                <div class="card-grid-2">
+                  <input type="text" placeholder="Validade (MM/AA)">
+                  <input type="email" placeholder="Email">
+                </div>
+
+                <input type="date" placeholder="Data de nascimento">
+
+              </div>
             </div>
 
           </div>

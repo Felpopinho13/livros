@@ -66,3 +66,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+const addressCards = document.querySelectorAll(".address-card");
+
+addressCards.forEach(card => {
+
+  card.addEventListener("click", () => {
+
+    addressCards.forEach(c => c.classList.remove("selected"));
+    card.classList.add("selected");
+
+  });
+
+});
+
+const creditCards = document.querySelectorAll(".credit-card");
+
+creditCards.forEach(card => {
+
+  card.addEventListener("click", () => {
+
+    creditCards.forEach(c => c.classList.remove("selected"));
+    card.classList.add("selected");
+
+  });
+
+});
